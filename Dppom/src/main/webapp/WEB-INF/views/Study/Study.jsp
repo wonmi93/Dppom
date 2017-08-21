@@ -30,12 +30,8 @@
 <h2>자격증 이욘</h2>
 <table border="1">
 	<tr>
-		<td>1222</td>
-		<td>1222</td>
-	</tr>
-	<tr>
-		<td>222222</td>
-		<td>2</td>
+		<td>1</td>
+		<td>1</td>
 	</tr>
 </table>
 </div>
