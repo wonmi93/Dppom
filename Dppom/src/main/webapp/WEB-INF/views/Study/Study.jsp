@@ -27,10 +27,14 @@
 	
 <div class="container">
 <br /><br /><br /><br />
-<h2>자격증 이욘</h2>
+<h2>자격증</h2>
 <table border="1">
 	<tr>
+
 		<td>1</td>
+
+		<td>122</td>
+
 		<td>1</td>
 	</tr>
 	<tr>
@@ -38,7 +42,6 @@
 		<td>2</td>
 	</tr>
 	<tr>
-		<td>3</td>
 		<td>3</td>
 		<td>3</td>
 	
