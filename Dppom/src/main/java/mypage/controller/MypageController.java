@@ -16,7 +16,6 @@ public class MypageController
 	public String adminHome(Model model)
 	{
 		System.out.println("마이 페이지 접속");
-		
 		return "mypage/myHome";
 	}
 	
