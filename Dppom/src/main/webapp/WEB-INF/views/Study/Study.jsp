@@ -30,7 +30,7 @@
 <h2>자격증</h2>
 <table border="1">
 	<tr>
-		<td>1</td>
+		<td>122</td>
 		<td>1</td>
 	</tr>
 	<tr>
