@@ -26,8 +26,8 @@
 	
 	
 <div class="container">
-<br /><br /><br /><br />
-<h2>자격증</h2>
+<!-- <br /><br /><br /><br /> -->
+<h2>어학/자격증</h2>
 <table border="1">
 	<tr>
 		<td>1</td>
@@ -48,7 +48,6 @@
 		
 	<!-- Botton (S) -->
 	<%@ include file="/WEB-INF/layout/LayoutBottom.jsp" %>
-	
 	<!--  Bottom(E) -->
 	
 	

@@ -59,7 +59,7 @@
 						    </div>
 					    </div>
 					    <div class="col-md-4 col-md-pull-7 col-sm-4 col-sm-pull-7 iphone-image">
-					    	<div class="iphone to-animate-2"><img src="./resources/bootstrap3.3.7/images/iphone-1.png" alt="Free HTML5 Template by FREEHTML5.co"></div>
+					    	<div class="iphone to-animate-2"><img src="./resources/bootstrap3.3.7/images/이대저대.png" alt="Free HTML5 Template by FREEHTML5.co"></div>
 					    </div>
 
 		    		</div>
@@ -86,7 +86,56 @@
 		</div>
 	</div>
 	
-	<div id="fh5co-about-us" data-section="about">
+	<!-- 베스트 게시판 -->
+		<div id="fh5co-testimonials" data-section="testimonials" style="background-color:white">		
+		<div class="container" >
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate" style="color:grey">B E S T</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3 style="color:grey">게시판(베스트) / 사람찾기 (최신글) / 어학,자격증 (조횟수)</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" >
+				<div class="col-md-4">
+					<div class="box-testimony to-animate">
+						<blockquote>
+							<span class="quote"><span><i class="icon-quote-left"></i></span></span>
+							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+						</blockquote>
+						<p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
+					</div>
+					
+				</div>
+				<div class="col-md-4">
+					<div class="box-testimony to-animate">
+						<blockquote>
+							<span class="quote"><span><i class="icon-quote-left"></i></span></span>
+							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.&rdquo;</p>
+						</blockquote>
+						<p class="author">John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
+					</div>
+					
+					
+				</div>
+				<div class="col-md-4">
+					<div class="box-testimony to-animate">
+						<blockquote>
+							<span class="quote"><span><i class="icon-quote-left"></i></span></span>
+							<p>&ldquo;Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.&rdquo;</p>
+						</blockquote>
+						<p class="author">John Doe, Founder <a href="#">FREEHTML5.co</a> <span class="subtext">Creative Director</span></p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!-- 	<div id="fh5co-about-us" data-section="about">
 		<div class="container">
 			<div class="row" id="team">
 				<div class="col-md-12 section-heading text-center to-animate">
@@ -134,7 +183,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
 	
 	<!-- Botton (S) -->

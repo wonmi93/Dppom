@@ -11,7 +11,7 @@
 			    <nav class="navbar navbar-default">
 		        <div class="navbar-header">
 		        	<!-- Mobile Toggle Menu Button -->
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+					
 		          	<a class="navbar-brand" href="Main" style="color:#6173f4">大  PPOM</a> 
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
@@ -25,11 +25,12 @@
 		            <li><a href="#"style="color:black" ><span>QnA</span></a></li>
 		          </ul>
 		             <ul class="nav navbar-nav navbar-right">
-		        	<li><a href="#" style="color:black"><span>Login</span></a></li>
-		        	<li><a href="#" style="color:black" ><span>Join</span></a></li>
+		        	<li><a href="Login" style="color:black"><span>Login</span></a></li>
+		        	<li><a href="myHome" style="color:black" ><span>My Page</span></a></li> <!-- 회원일때만 -->
+		        	<li><a href="Join" style="color:black" ><span>Join</span></a></li>
 		        </ul>
 		        </div>
 		        
 			    </nav>
 			
-		  </div>
+</div>

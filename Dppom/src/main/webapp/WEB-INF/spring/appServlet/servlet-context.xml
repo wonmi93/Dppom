@@ -24,11 +24,9 @@
 	
 	<!-- 스프링 프레임워크는 아래에 지정된 패키지를 스캔하다가  @Controller 어노테이션을 만나게 되면 해당 클래스를 컨트롤러로 인식하게 된다. -->
 	<context:component-scan base-package="com.kosmo.Dppom" />
-	<context:component-scan base-package="top.controller" />
-	<context:component-scan base-package="Info.controller" />
-	<context:component-scan base-package="Board.controller" />
-	<context:component-scan base-package="Study.controller" />
-	<context:component-scan base-package="QnA.controller" />
+	
+	<context:component-scan base-package="dppom.controller" />
+
 	
 	
 	

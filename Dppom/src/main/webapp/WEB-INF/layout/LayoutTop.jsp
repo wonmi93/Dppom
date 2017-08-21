@@ -25,8 +25,9 @@
 		            <li><a href="#" ><span>QnA</span></a></li>
 		          </ul>
 		             <ul class="nav navbar-nav navbar-right">
-		        	<li><a href="#" ><span>Login</span></a></li>
-		        	<li><a href="#" ><span>Join</span></a></li>
+		        	<li><a href="Login" ><span>Login</span></a></li>
+		        	<li><a href="myHome" ><span>My Page</span></a></li> <!-- 회원일때만 -->
+		        	<li><a href="Join" ><span>Join</span></a></li>
 		        </ul>
 		        </div>
 		        
