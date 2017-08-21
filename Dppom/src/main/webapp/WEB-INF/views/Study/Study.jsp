@@ -30,18 +30,14 @@
 <h2>어학/자격증</h2>
 <table border="1">
 	<tr>
-		<td>1</td>
-		<td>1</td>
+		<td>111</td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>2</td>
 		<td>2</td>
 	</tr>
-	<tr>
-		<td>3</td>
-		<td>3</td>
-	
-	</tr>
+
 </table>
 </div>
 		
