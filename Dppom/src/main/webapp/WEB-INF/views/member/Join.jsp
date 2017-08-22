@@ -313,7 +313,7 @@ $(function() {
 								<!-- //비밀번호 -->
 																<!-- 이메일 -->
 								<div class="wrap_text_field">
-									<input type="text" id="uemail1" class="text_field" value="이메일" dg-data="이메일" style="width:128px;">
+									<input type="text" id="uemail1" class="text_field" placeholder="이메일" dg-data="이메일" style="width:128px;">
 									<span class="txt_mail">@</span>
 									<input type="text" id="uemail_direct" class="text_field" value="" style="width:128px;">
 									&nbsp;&nbsp;&nbsp;
@@ -326,12 +326,12 @@ $(function() {
 								<div class="wrap_text_field">
 									<div class="wrap_name_field">
 										<div class="clear_fix">
-																							<input type="text" id="uname" name="uname" class="text_field" style="width:213px;" value="이름 " dg-data="이름 " />
-																																</div>
+											<input type="text" id="uname" name="uname" class="text_field" style="width:213px;" placeholder="이름" dg-data="이름 " />
+										</div>
 										<p id="uname_error" class="help_block">이름을 입력해주세요.</p>
 									</div>
 									<div class="wrap_name_field">
-										<input type="text" id="umobile" class="text_field" style="width:213px;" maxlength="13" value="휴대폰번호" dg-data="휴대폰번호" />
+										<input type="text" id="umobile" class="text_field" style="width:213px;" maxlength="13" placeholder="휴대폰번호" dg-data="휴대폰번호" />
 									</div>
 								</div>
 								<p class="help_block help_block_notice ico_dot" id="mobile_notice">휴대폰번호는 아이디 또는 비밀번호를 찾기 위한 정보이므로 정확하게 입력해 주세요.</p>
@@ -390,7 +390,7 @@ $(function() {
 								<div class="wrap_text_field wrap_agree_area">
 									<div class="wrap_check_agree">
 										<strong>이용약관 동의</strong>
-										<a href="/customer_center/agreement" class="btn_wmp_join btn_wmp_white btn_small" target="_blank">
+										<a href="#" class="btn_wmp_join btn_wmp_white btn_small" target="_blank">
 											<span class="inner">내용보기</span>
 										</a>
 									</div>
@@ -422,11 +422,11 @@ $(function() {
 									</thead>
 									<tbody>
 										<tr>
-																						<td>
-												이용자 식별,<br/> 서비스 이용 및 상담, <br/>연령확인
+											<td>
+												이용자 식별,<br/> 서비스 이용 및 상담
 											</td>
 											<td>
-												이름, 이메일,<br/>비밀번호, 휴대전화번호,<br/>생년월일(입력)
+												이름, 이메일,<br/>비밀번호, 휴대전화번호
 											</td>
 																																	<td>
 												회원탈퇴 후 5일 까지
