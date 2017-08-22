@@ -125,7 +125,6 @@
 
 </div>
 </div>
-	
 	<!-- Botton (S) -->
 	<%@ include file="/WEB-INF/layout/LayoutBottom.jsp" %>
 	<!--  Bottom(E) -->
