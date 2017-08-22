@@ -12,7 +12,7 @@
 	<title>대PPOM에 오신것을 환영합니다!</title>
 </head>
 <body>
-<h1>메인 페이지</h1>
+<h1>12345</h1>
 
 <h3>[top]</h3>
 <div>
