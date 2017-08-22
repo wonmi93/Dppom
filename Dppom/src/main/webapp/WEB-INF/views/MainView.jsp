@@ -28,14 +28,13 @@
 					    <div class="col-md-7 col-sm-7">
 			    			<div class="fh5co-owl-text-wrap">
 						    	<div class="fh5co-owl-text">
-						    		<h1 class="fh5co-lead to-animate">Case Study Title</h1>
-									<h2 class="fh5co-sub-lead to-animate">100% Free Fully Responsive HTML5 Bootstrap Template. Crafted with love by the fine folks at <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a></h3>
-									<p class="to-animate-2"><a href="#" class="btn btn-primary btn-lg">View Case Study</a></p>
+						    		<h1 class="fh5co-lead to-animate">이대저대에<br />오신것을 환영합니다!</h1>
+									<h2 class="fh5co-sub-lead to-animate">이대저대의 대표 캐릭터 라이언입니다! ㅇㅅㅇ</h3>
 						    	</div>
 						    </div>
 					    </div>
 					    <div class="col-md-4 col-md-push-1 col-sm-4 col-sm-push-1 iphone-image">
-					    	<div class="iphone to-animate-2"><img src="./resources/bootstrap3.3.7/images/iphone-2.png" alt="Free HTML5 Template by FREEHTML5.co"></div>
+					    	<div class="iphone to-animate-2"><img src="./resources/bootstrap3.3.7/images/ryan.png" alt="Free HTML5 Template by FREEHTML5.co"></div>
 					    </div>
 
 		    		</div>
