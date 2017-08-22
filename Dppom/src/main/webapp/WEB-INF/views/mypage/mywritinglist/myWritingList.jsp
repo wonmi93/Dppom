@@ -9,6 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../../resources/bootstrap-3.3.7/js/bootstrap.min.js"></script>
 <title>마이 페이지</title>
+<link rel="shortcut icon" href="./resources/bootstrap3.3.7/images/D.ico" />
 </head>
 <body>
 	<h1>내가쓴 글 보기</h1>

@@ -12,6 +12,7 @@
 }
 </style>
 <title>마이 페이지입니다</title>
+<link rel="shortcut icon" href="./resources/bootstrap3.3.7/images/D.ico" />
 </head>
 <body>
 <header role="banner" id="fh5co-header">

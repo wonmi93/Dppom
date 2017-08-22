@@ -12,6 +12,7 @@
 }
 </style>
 <title>졸 업 ㅠ ㅠ </title>
+<link rel="shortcut icon" href="./resources/bootstrap3.3.7/images/D.ico" />
 </head>
 <body>
 <header role="banner" id="fh5co-header">

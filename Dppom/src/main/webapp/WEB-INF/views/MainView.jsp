@@ -8,6 +8,7 @@
 	<%@ include file="/WEB-INF/layout/head.jsp" %>
 	</head>
 	<title>大PPOM 커뮤니티사이트 </title>
+	<link rel="shortcut icon" href="./resources/bootstrap3.3.7/images/D.ico" />
 	
 	<body>
 	<header role="banner" id="fh5co-header">

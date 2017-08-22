@@ -94,9 +94,9 @@ body {background-color:#f9f9f9;overflow-y:auto !important;}
 .btn_wmp_join::-moz-focus-inner {border:0;padding:0;}
 .btn_wmp_join,
 .btn_wmp_join .inner,
-.btn_wmp_join .inner_small {display:inline-block;background:url(//image.wemakeprice.com/images/join/btn_join.png) no-repeat;}
+.btn_wmp_join .inner_small {display:inline-block;background:skyblue;}
 .btn_wmp_join {overflow:visible;padding-left:7px;vertical-align:baseline;}
-.btn_wmp_join .inner {min-width:138px;padding:2px 8px 0 0;font-weight:bold;font-size:14px;color:#fff;line-height:39px;text-align:center;white-space:nowrap;}
+.btn_wmp_join .inner {min-width:120px;padding:2px 8px 0 0;font-weight:bold;font-size:14px;color:#fff;line-height:39px;text-align:center;white-space:nowrap;}
 .btn_wmp_join:active .inner {position:relative;top:0;left:0;}
 .btn_wmp_join .inner_small {min-width:82px;padding:2px 7px 0 0;font-weight:bold;font-size:14px;color:#fff;line-height:39px;text-align:center;white-space:nowrap;}
 .btn_wmp_join:active .inner_small {position:relative;top:0;left:0;}
@@ -119,6 +119,7 @@ body {background-color:#f9f9f9;overflow-y:auto !important;}
 .btn_wmp_white.btn_small {background-position:0 -160px;}
 .btn_wmp_white.btn_small .inner {background-position:100% -160px;}
 .wrap_center_btn {margin-top:27px;text-align:center;clear:both;}
+.wrap_right_btn {text-align:right;clear:both;}
 
 /* Join Title */
 .tit_wmp_join {display:block;overflow:hidden;background:url(//image.wemakeprice.com/images/resources/wmp/pages/member/join/tit-join-v1.png) no-repeat;text-indent:-9999px;}

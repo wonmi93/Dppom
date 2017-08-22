@@ -12,6 +12,7 @@
 }
 </style>
 <title>마이 페이지 - 내글보기</title>
+<link rel="shortcut icon" href="./resources/bootstrap3.3.7/images/D.ico" />
 </head>
 <body>
 <header role="banner" id="fh5co-header">

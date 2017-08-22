@@ -8,32 +8,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>대뽐!!</title>
-<link rel="shortcut icon" href="http://img.wemep.co.kr/favicon_v01.ico" />
+<link rel="shortcut icon" href="./resources/bootstrap3.3.7/images/D.ico" />
 
 <link href="./resources/bootstrap3.3.7/css/join1.css" type="text/css" rel="stylesheet">
 <link href="./resources/bootstrap3.3.7/css/join2.css" type="text/css" rel="stylesheet">
 <link href="./resources/bootstrap3.3.7/css/join3.css" type="text/css" rel="stylesheet">
 <link href="./resources/bootstrap3.3.7/css/join4.css" type="text/css" rel="stylesheet">
 <link href="./resources/bootstrap3.3.7/css/join5.css" type="text/css" rel="stylesheet">
-
-<!-- common -->
-<script src="/js/ZeroClipboard.js?20170810_1" type="text/javascript" ></script>
-<script src="/js/_jquery/jquery-1.4.2.min.js?20170810_1" type="text/javascript"></script>
-<script src="/js/_jquery/jquery-ui.min.js?20170810_1" type="text/javascript"></script>
-<script src="/js/_jquery/plugin/jquery.numberformatter-1.2.js?20170810_1" type="text/javascript"></script>
-<script src="/js/_jquery/plugin/jquery.sha1.js?20170810_1" type="text/javascript"></script>
-<script src="/js/_jquery/plugin/jquery.i18n.properties.js?20170810_1" type="text/javascript"></script>
-<script src="/js/_jquery/plugin/jquery.caret.js?20170810_1" type="text/javascript"></script>
-<script src="/js/_lib/base64.js?20170810_1" type="text/javascript"></script>
-
-<!-- account join -->
-<script src="/js/default.js?20170810_1" type="text/javascript"></script>
-<script src="/js/account/account_v3.js?20170810_1" type="text/javascript"></script>
-<script src="/js/account/account_auth.js?20170810_1" type="text/javascript"></script>
-<script src="/js/account/join_v3.js?20170810_1" type="text/javascript"></script>
-<script src="/js/c/wmp_countdown.js?20170810_1" type="text/javascript"></script>
-<script src="/js/c/wmp_util.js?20170810_1" type="text/javascript"></script>
-
 <script type="text/javascript">
 var isBusinessUser = 0;
 
@@ -72,11 +53,6 @@ function updateNumberOfDays(){
 function daysInMonth(month, year) {
 	return new Date(year, month, 0).getDate();
 }
-
-$(document).ready(function() {
-	memberServer = 'https://member.wemakeprice.com';
-	webServer = 'http://member.wemakeprice.com';
-});
 
 var ver_src = $.browser.version, version_data = ver_src.split(".");
 $(function() {
@@ -283,17 +259,6 @@ $(function() {
 	<a href="#container" onclick="skipNavigation('#container');return false;"><span>본문 바로가기</span></a>
 </div>
 <div id="wrap">
-	<div id="header">
-		<div class="header_inner">
-			<h1 class="logo_wmp_v3"><a href="http://wemakeprice.com/">특가대표! 위메프</a></h1>
-			<ul class="header_link">
-				<li class="link_main"><a href="http://www.wemakeprice.com/">위메프 메인</a></li>
-				<li class="link_cc"><a href="http://www.wemakeprice.com/customer_center/">고객센터</a></li>
-				<li class="link_notice"><a href="http://www.wemakeprice.com/board_notice/notice_list/">공지사항</a></li>
-			</ul>
-		</div>
-	</div>
-
 	<div id="container">
 		<h2 id="skip_cont" class="hide">컨텐츠영역</h2>
 		<!-- 회원가입 -->
@@ -317,82 +282,46 @@ $(function() {
 					<div class="join_content">
 						<!-- 필수 정보 -->
 						<div class="wrap_cont_necessary">
-							<h3 class="tit_wmp_join tit_join_member">회원가입</h3>
+							<h1 class="text-center" style="font-size:50px; color:green;">大 PPOM</h1>
 
 							
 							<h4 class="tit_wmp_join tit_join_necessary mg-section-sm">필수 정보</h4>
 							<div class="necessary_input">
-																<!-- 이메일 -->
+							
 								<div class="wrap_text_field">
-									<input type="text" id="uemail1" class="text_field" value="이메일" dg-data="이메일" style="width:128px;">
-									<span class="txt_mail">@</span>
-									<input type="text" id="uemail_direct" class="text_field" value="" style="width:128px;">
-									<div class="select_area email" data-id="select_area">
-										<a href="javascript:void(0);" class="optbox_sel" dg-data="직접입력" id="uemail2" data-id="select_active">직접입력</a>
-										<div class="optbox_list" data-id="select_list">
-											<a href="javascript:void(0);" class="selected" data-id="selected" dg-data="직접입력">직접입력</a>
-											<a href="javascript:void(0);" dg-data="naver.com">naver.com</a>
-											<a href="javascript:void(0);" dg-data="hanmail.net">hanmail.net</a>
-											<a href="javascript:void(0);" dg-data="nate.com">nate.com</a>
-											<a href="javascript:void(0);" dg-data="gmail.com">gmail.com</a>
-											<a href="javascript:void(0);" dg-data="lycos.co.kr">lycos.co.kr</a>
-											<a href="javascript:void(0);" dg-data="yahoo.co.kr">yahoo.co.kr</a>
-											<a href="javascript:void(0);" dg-data="yahoo.com">yahoo.com</a>
-											<a href="javascript:void(0);" dg-data="empal.com">empal.com</a>
-											<a href="javascript:void(0);" dg-data="dreamwiz.com">dreamwiz.com</a>
-											<a href="javascript:void(0);" dg-data="paran.com">paran.com</a>
-											<a href="javascript:void(0);" dg-data="korea.com">korea.com</a>
-											<a href="javascript:void(0);" dg-data="chol.com">chol.com</a>
-											<a href="javascript:void(0);" dg-data="hanmir.com">hanmir.com</a>
-											<a href="javascript:void(0);" dg-data="hanafos.com">hanafos.com</a>
-											<a href="javascript:void(0);" dg-data="freechal.com">freechal.com</a>
-											<a href="javascript:void(0);" dg-data="hotmail.com">hotmail.com</a>
-											<a href="javascript:void(0);" dg-data="netian.com">netian.com</a>
-										</div>
-									</div>
+									<input type="text" placeholder="아이디" id="id" class="text_field" name="id" maxlength="15" style="width:213px;">
+									<span>아이디 중복결과</span>
+									&nbsp;
+									<button type="button" class="btn_wmp_join btn_wmp_red" id="skyblue">
+										<span class="inner">중복확인</span>
+									</button>
 								</div>
-								<p id="uemail_error" class="help_block">
-									아이디로 사용할 이메일을 입력해 주시기 바랍니다.
-								</p>
-								<p id="uemail_dup_error" class="help_block">
-									이미 사용중인 이메일 입니다. 다른 이메일을 입력해 주세요.
-									<span id="email_dup_login" class="email_login">
-										<a href="javascript:void(0);" onclick="location.href=memberServer+'/member/login/'+location.search">로그인</a>
-										<span class="txt_bar">|</span>
-										<a href="javascript:void(0);" onclick="window.open('/member/lost/pw/popup/','WeMakePrice','width=425,height=470,status=0,menu=0');">비밀번호 찾기</a>
-									</span>
-								</p>
-								<p id="uemail_illegal_error" class="help_block">
-									도용 신고 접수된 이메일입니다. 다른 이메일을 입력해 주세요.
-									<span class="email_login">
-										<a href="javascript:void(0);" onclick="location.href=memberServer+'/member/login/'+location.search">로그인</a>
-										<span class="txt_bar">|</span>
-										<a href="javascript:void(0);" onclick="window.open('/member/lost/pw/popup/','WeMakePrice','width=425,height=470,status=0,menu=0');">비밀번호 찾기</a>
-									</span>
-								</p>
-								<p id="uemail_withdraw_div" class="help_block">
-									탈퇴 신청 중인 이메일 입니다. 탈퇴신청을 철회하시려면 ->
-									<a href="javascript:void(0);" onclick="location.href=memberServer+'/member/login/'+location.search">로그인</a>
-								</p>
-								<!-- //이메일 -->
 																								<!-- 비밀번호 -->
 								<div class="wrap_text_field">
 									<div class="wrap_pass_field">
 										<div class="clear_fix">
-											<!-- <label for="upw" id="label_upw">비밀번호</label> -->
-											<input type="password" id="upw" class="text_field" name="upw" maxlength="15" style="width:213px;">
+											<input type="password" placeholder="비밀번호" id="upw" class="text_field" name="upw" maxlength="15" style="width:213px;">
 										</div>
-										<p id="upw_error" class="help_block">비밀번호를 입력해주세요.</p>
 									</div>
 									<div class="wrap_pass_field">
 										<div class="clear_fix">
 											<label for="urepw" id="label_urepw">비밀번호 재확인</label>
 											<input type="password" id="urepw" class="text_field" name="urepw" maxlength="15" style="width:213px;" disabled>
 										</div>
-										<p id="urepw_error" class="help_block">입력하신 비밀번호가 일치하지 않습니다.</p>
 									</div>
 								</div>
 								<!-- //비밀번호 -->
+																<!-- 이메일 -->
+								<div class="wrap_text_field">
+									<input type="text" id="uemail1" class="text_field" value="이메일" dg-data="이메일" style="width:128px;">
+									<span class="txt_mail">@</span>
+									<input type="text" id="uemail_direct" class="text_field" value="" style="width:128px;">
+									&nbsp;&nbsp;&nbsp;
+									<button type="button" id="joinConfirmBtn" class="btn_wmp_join btn_wmp_red">
+										<span class="inner">인증하기</span>
+									</button>
+								</div>
+								<!-- //이메일 -->
 								<!-- 이름, 휴대폰번호/기본 -->
 								<div class="wrap_text_field">
 									<div class="wrap_name_field">
@@ -442,29 +371,21 @@ $(function() {
 
 								
 																<!-- //이름, 휴대폰번호/기본 -->
-								<!-- 생년월일 -->
+								<!-- 학과 -->
 								<div class="wrap_text_field">
-									<div class="select_area year" data-id="select_area" data-select-value="year">
-										<a href="javascript:void(0);" class="optbox_sel" dg-data="생년" data-id="select_active" id="selected_year">생년</a>
-										<div class="optbox_list" data-id="select_list" id="select_year">
-											<a href="javascript:void(0);" class="selected" data-id="selected" dg-data="생년">생년</a>
+									<div class="wrap_pass_field">
+										<div class="clear_fix">
+											<input type="text" placeholder="학교" id="" class="text_field" name="" maxlength="15" style="width:213px;">
 										</div>
 									</div>
-									<div class="select_area month" data-id="select_area" data-select-value="month">
-										<a href="javascript:void(0);" class="optbox_sel" dg-data="월" data-id="select_active" id="selected_month">월</a>
-										<div class="optbox_list" data-id="select_list" id="select_month">
-											<a href="javascript:void(0);" class="selected" data-id="selected" dg-data="월">월</a>
-										</div>
-									</div>
-									<div class="select_area day" data-id="select_area" data-select-value="day">
-										<a href="javascript:void(0);" class="optbox_sel" dg-data="일" data-id="select_active" id="selected_day">일</a>
-										<div class="optbox_list" data-id="select_list" id="select_day">
-											<a href="javascript:void(0);" class="selected" data-id="selected" dg-data="일">일</a>
+									<div class="wrap_pass_field">
+										<div class="clear_fix">
+											<input type="text" placeholder="학과" id="" class="text_field" name="" maxlength="15" style="width:213px;">
 										</div>
 									</div>
 								</div>
-								<p id="birth_error" class="help_block">생년월일을 입력해 주세요.</p>
-								<!-- //생년월일 -->
+								<!-- //학과 -->
+								
 																<!-- 이용약관동의 -->
 								<div class="wrap_text_field wrap_agree_area">
 									<div class="wrap_check_agree">
@@ -518,94 +439,95 @@ $(function() {
 						</div>
 						<!-- //필수 정보 -->
 						<!-- 부가 정보 -->
-						<div class="wrap_cont_select">
-							<h4 class="tit_wmp_join tit_join_select">부가 정보</h4>
-														<!-- 성별, 전체동의 -->
-							<div class="wrap_text_field wrap_agree_area">
-								<div class="select_sex">
-									<span class="txt_sex">성별</span>
-									<div class="wrap_check_agree">
-										<label>
-											<input type="radio" class="check" name="select_sex" value="1" />
-											남자
-										</label>
-									</div>
-									<div class="wrap_check_agree">
-										<label>
-											<input type="radio" class="check" name="select_sex" value="2" />
-											여자
-										</label>
-									</div>
-									<p id="sex_error" class="help_block">성별 정보를 입력해주세요.</p>
-								</div>
-							</div>
+<!-- 						<div class="wrap_cont_select"> -->
+<!-- 							<h4 class="tit_wmp_join tit_join_select">부가 정보</h4> -->
+<!-- 														성별, 전체동의 -->
+<!-- 							<div class="wrap_text_field wrap_agree_area"> -->
+<!-- 								<div class="select_sex"> -->
+<!-- 									<span class="txt_sex">성별</span> -->
+<!-- 									<div class="wrap_check_agree"> -->
+<!-- 										<label> -->
+<!-- 											<input type="radio" class="check" name="select_sex" value="1" /> -->
+<!-- 											남자 -->
+<!-- 										</label> -->
+<!-- 									</div> -->
+<!-- 									<div class="wrap_check_agree"> -->
+<!-- 										<label> -->
+<!-- 											<input type="radio" class="check" name="select_sex" value="2" /> -->
+<!-- 											여자 -->
+<!-- 										</label> -->
+<!-- 									</div> -->
+<!-- 									<p id="sex_error" class="help_block">성별 정보를 입력해주세요.</p> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
 							<!-- //성별, 전체동의 -->
 							<!-- 선택항목 전체동의 동의 -->
-							<div class="wrap_text_field wrap_agree_area">
-								<div class="wrap_check_agree">
-									<label>
-										<input type="checkbox" class="check" data-id="agree_optional_info_select_all" />
-										<strong>전체동의</strong>
-									</label>
-																		<span>
-										(
-										<label>
-											<input type="checkbox" id="agree_sex" data-id="check_agree_optional_info" class="check" name="agree_sex">
-											성별 수집동의
-										</label>
-									</span>
-									<span>
-										<label>
-											<input type="checkbox" id="agree_birth" data-id="check_agree_optional_info" class="check" name="agree_birth">
-											생년월일 수집동의 )
-										</label>
-									</span>
-																										</div>
-							</div>
+<!-- 							<div class="wrap_text_field wrap_agree_area"> -->
+<!-- 								<div class="wrap_check_agree"> -->
+<!-- 									<label> -->
+<!-- 										<input type="checkbox" class="check" data-id="agree_optional_info_select_all" /> -->
+<!-- 										<strong>전체동의</strong> -->
+<!-- 									</label> -->
+<!-- 																		<span> -->
+<!-- 										( -->
+<!-- 										<label> -->
+<!-- 											<input type="checkbox" id="agree_sex" data-id="check_agree_optional_info" class="check" name="agree_sex"> -->
+<!-- 											성별 수집동의 -->
+<!-- 										</label> -->
+<!-- 									</span> -->
+<!-- 									<span> -->
+<!-- 										<label> -->
+<!-- 											<input type="checkbox" id="agree_birth" data-id="check_agree_optional_info" class="check" name="agree_birth"> -->
+<!-- 											생년월일 수집동의 ) -->
+<!-- 										</label> -->
+<!-- 									</span> -->
+<!-- 																										</div> -->
+<!-- 							</div> -->
 							<!-- //선택항목 전체동의 동의 -->
-							<p class="help_block_notice_red"> 선택항목은 동의하지 않아도 회원가입이 가능하며, 원하는 항목만 동의할 수 있습니다.</p>
+<!-- 							<p class="help_block_notice_red"> 선택항목은 동의하지 않아도 회원가입이 가능하며, 원하는 항목만 동의할 수 있습니다.</p> -->
 							<!-- 개인정보 수집 및 이용안내 -->
-							<p class="tit_wmp_join tit_agree_collecting">개인정보 수집 및 이용안내</p>
-							<table summary="개인정보 수집 및 이용안내 목적, 항목, 보유 및 이용기간에 대한 정보 제공">
-								<caption>개인정보 수집 및 이용안내</caption>
-								<colgruop>
-									<col width="34%" />
-									<col width="33%" />
-									<col width="33%" />
-								</colgruop>
-								<thead>
-									<tr>
-										<th>
-											목적
-										</th>
-										<th>
-											항목
-										</th>
-										<th>
-											보유 및 이용 기간
-										</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>
-											맞춤형 상품 추천 등<br/>마케팅 활용
-										</td>
-										<td>
-											성별, 생년월일 																					</td>
-										<td>
-											회원탈퇴 후 5일 까지
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<!-- //개인정보 수집 및 이용안내 -->
+<!-- 							<p class="tit_wmp_join tit_agree_collecting">개인정보 수집 및 이용안내</p> -->
+<!-- 							<table summary="개인정보 수집 및 이용안내 목적, 항목, 보유 및 이용기간에 대한 정보 제공"> -->
+<%-- 								<caption>개인정보 수집 및 이용안내</caption> --%>
+<%-- 								<colgruop> --%>
+<%-- 									<col width="34%" /> --%>
+<%-- 									<col width="33%" /> --%>
+<%-- 									<col width="33%" /> --%>
+<%-- 								</colgruop> --%>
+<!-- 								<thead> -->
+<!-- 									<tr> -->
+<!-- 										<th> -->
+<!-- 											목적 -->
+<!-- 										</th> -->
+<!-- 										<th> -->
+<!-- 											항목 -->
+<!-- 										</th> -->
+<!-- 										<th> -->
+<!-- 											보유 및 이용 기간 -->
+<!-- 										</th> -->
+<!-- 									</tr> -->
+<!-- 								</thead> -->
+<!-- 								<tbody> -->
+<!-- 									<tr> -->
+<!-- 										<td> -->
+<!-- 											맞춤형 상품 추천 등<br/>마케팅 활용 -->
+<!-- 										</td> -->
+<!-- 										<td> -->
+<!-- 											성별, 생년월일 																					</td> -->
+<!-- 										<td> -->
+<!-- 											회원탈퇴 후 5일 까지 -->
+<!-- 										</td> -->
+<!-- 									</tr> -->
+<!-- 								</tbody> -->
+<!-- 							</table> -->
+<!-- 							//개인정보 수집 및 이용안내 -->
 							<div class="wrap_center_btn">
 								<button type="submit" id="joinConfirmBtn" class="btn_wmp_join btn_wmp_red btn_large">
 									<span class="inner">동의하고 회원가입</span>
 								</button>
 							</div>
-						</div>
+							<br /><br /><br />
+<!-- 						</div> -->
 						<!-- //선택 항목 -->
 					</div>
 				</fieldset>
@@ -614,111 +536,5 @@ $(function() {
 		<!-- //회원가입 -->
 	</div>
 	<!-- // container -->
-
-<div id="fb-root"></div>
-
-<script>
-(function(d){
-	var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-	if (d.getElementById(id)) {return;}
-	js = d.createElement('script'); js.id = id; js.async = true;
-	js.src = document.location.protocol+"//connect.facebook.net/ko_KR/all.js";
-	ref.parentNode.insertBefore(js, ref);
-}(document));
-
-window.fbAsyncInit = function() {
-	FB.init({
-		appId		: '122691617829067', // App ID
-		channelUrl	: '//member.wemakeprice.com/social/channel', // Channel File
-		status		: true, // check login status
-		cookie		: true, // enable cookies to allow the server to access the session
-		xfbml		: true,	// parse XFBML
-		oauth		: true
-	});
-	//_ga.trackFacebook();
-
-		
-	
-	if ( typeof(fb_modify_func) == 'function' )
-	{
-		fb_modify_func();
-	}
-};
-
-</script>
-
-
-<script type="text/javascript">
-var _gaq = _gaq || [];
-
-_gaq.push(['_setAccount', 'UA-18774526-1']);
-_gaq.push(['_setDomainName', 'wemakeprice.com']);
-_gaq.push(['_addIgnoredRef', 'wemakeprice.com']);
-_gaq.push(['_addIgnoredRef', 'wemakeprice.co.kr']);
-_gaq.push(['_setCampaignCookieTimeout', 0]);
-
-
-
-_gaq.push(['_trackPageview']);
-//_gaq.push(['_trackPageLoadTime']);
-
-
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-
-$(document).ready(function() {
-	ga_tracking('#login_banner li');	// 로그인배너
-});
-
-function ga_tracking(obj) {
-	$(obj).each(function(){
-		load_url = $(this).find("img").attr("load_url");
-		load_position = $(this).find("img").attr("load_position");
-
-		var rst0 = Math.floor(Math.random() * 100) + 1;		// 구글 트래킹 호출 관련 확률 적용
-		if (rst0 == 1) {
-			if($(this).css('display') != 'none') {
-				_gaq.push(['_trackEvent', 'Banner Impr', load_position, load_url]);
-			}
-		}
-	});
-}
-
-</script>
-
-
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5BBPNN"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5BBPNN');</script>
-<!-- End Google Tag Manager -->	
-				<!-- // Footer -->
-</div>
-<script type="text/javascript">
-$(document).ready(function() {
-	$('.wrap_check_agree button').live('click',function() {
-		$("#xpopup2").html('');
-		xpopup_close();
-
-		$("#xpopup2").load('/customer_center/agreement_popup');
-		$('#xpopup2').dialog({width: 510, minHeight: 252, autoOpen: false, modal: true, resizable: false});
-		$('#xpopup2').dialog({
-			close: function () {
-				enable_scroll_y();
-			}
-		});
-		$('#xpopup2').dialog('open');
-		xpopup_open();
-	});
-});
-</script>
 </body>
 </html>

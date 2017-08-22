@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SiteInfo.jsp</title>
+<link rel="shortcut icon" href="./resources/bootstrap3.3.7/images/D.ico" />
 </head>
 <body>
 <h2>사이트 소개 </h2>

@@ -14,6 +14,7 @@
 </head>
 
 <title>Study</title>
+<link rel="shortcut icon" href="./resources/bootstrap3.3.7/images/D.ico" />
 
 <body>
 <header role="banner" id="fh5co-header">
