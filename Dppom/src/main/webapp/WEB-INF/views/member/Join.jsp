@@ -7,7 +7,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>대뽐</title>
+<title>대뽐!!</title>
 <link rel="shortcut icon" href="http://img.wemep.co.kr/favicon_v01.ico" />
 
 <link href="./resources/bootstrap3.3.7/css/join1.css" type="text/css" rel="stylesheet">
