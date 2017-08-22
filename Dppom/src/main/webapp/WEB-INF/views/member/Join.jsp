@@ -1,995 +1,812 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="true" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-        <meta property="og:title" content="Daum 회원가입">
-<meta property="og:type" content="website">
-<meta property="og:image" content="http://m1.daumcdn.net/svc/image/U03/common_icon/5587C4E4012FCD0001">
-<meta property="og:image:secure_url" content="https://m1.daumcdn.net/svc/image/U03/common_icon/5587C4E4012FCD0001">
-<meta property="og:description" content="여기를 눌러 링크를 확인하세요.">
-    <title>가입 정보 입력 | Daum 회원가입</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Cache-Control" content="no-cache"/>
-    <meta http-equiv="Expires" content="0"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta name="description" content="Daum 회원가입">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>특가대표! 위메프</title>
+<link rel="shortcut icon" href="http://img.wemep.co.kr/favicon_v01.ico" />
 
-            <link rel="stylesheet" type="text/css" href="/content/css/join_reform.css?v=170810013940">
-            <link rel="stylesheet" type="text/css" href="/content/css/join_reform_font.css?v=170810013940">
-    </head>
-<body>
-<div id="kakaoIndex"> <!-- 웹접근성용 바로가기 링크 모음 -->
-    <a href="#kakaoBody">본문 바로가기</a>
-</div>
+<link href="./resources/bootstrap3.3.7/css/join1.css" type="text/css" rel="stylesheet">
+<link href="./resources/bootstrap3.3.7/css/join2.css" type="text/css" rel="stylesheet">
+<link href="./resources/bootstrap3.3.7/css/join3.css" type="text/css" rel="stylesheet">
+<link href="./resources/bootstrap3.3.7/css/join4.css" type="text/css" rel="stylesheet">
+<link href="./resources/bootstrap3.3.7/css/join5.css" type="text/css" rel="stylesheet">
 
-<div id="kakaoWrap" class="join_personal">
-    <div id="kakaoHead">
-        <div class="inner_head">
-            <h1>
-                <a href="http://www.daum.net" id="daumServiceLogo" class="ico_join"><span class="ir_wa">DAUM</span></a>
-            </h1>
-        </div>
-    </div>
-    <hr class="hide"><h2 class="screen_out">회원가입 안내 본문</h2>
-<div id="kakaoBody" class="cont_personal">
-    <div class="paging_step">
-        <span class="ico_join ico_paging"></span>
-        <span class="ico_join ico_paging on"></span>
-        <span class="ico_join ico_paging"></span>
-    </div>
-    <div class="wrap_tit">
-        <h3 class="tit_join">가입 정보 입력</h3>
-        <div class="txt_desc">
-            로그인 정보 및 가입 정보를 입력하세요.
-        </div>
-    </div>
-    <form id="joinInput" name="joinInput" action="/join/signup" method="POST">
-        <fieldset class="fld_comm">
-            <legend class="screen_out">가입 정보</legend>
-            <div class="wrap_info">
-                <div class="box_info">
-                    <dl class="item_info">
-                        <dt><label for="inpID" class="lab_info">Daum 아이디</label></dt>
-                        <dd>
-                            <div class="wrap_inp">
-                                <label for="daumId" class="txt_placeholder ">아이디</label>
-                                <!-- 텍스트 입력 시 .screen_out  -->
-                                <input type="text" id="daumId" name="daumId" class="inp_info"
-                                       value="" autocomplete="off" maxlength="15">
-                                <span class="txt_fix txt_domain">@daum.net</span>
-                                <span class="mark_valid" style="display: none;"><span class="ico_join ico_valid"></span><span
-                                        class="screen_out">유효</span></span>
-                            </div>
-                            <p class="txt_message" style="display:none;">이미 사용된 Daum 메일입니다. 다른 아이디를 입력하세요.</p>
-                            <div id="recommendIds" style="display:none;">
-                                <div class="txt_message">
-                                    <span class="txt_recommend">아이디 추천 :
-                                        <a href="javascript:;" id="recommendId1"><span class='txt_other'></span></a>
-                                        <a href="javascript:;" id="recommendId2"><span class='txt_other'></span></a>
-                                    </span>
-                                </div>
-                            </div>
-                        </dd>
-                    </dl>
-                    <dl class="item_info info_password">
-                        <dt><label for="inpPw" class="lab_info">비밀번호</label></dt>
-                        <dd>
-                            <div class="wrap_inp">
-                                <label for="password1"
-                                       class="txt_placeholder ">비밀번호
-                                    (8자 이상)</label> <!-- 텍스트 입력 시 .screen_out  -->
-                                <input type="password" id="password1" name="password1" class="inp_info pw"
-                                       value="" maxlength="32">
-                                <span class="mark_valid" style="display: none;">불가</span>
-                            </div>
-                        </dd>
-                        <dt><label for="inpPw2" class="lab_info">비밀번호 재확인</label></dt>
-                        <dd>
-                            <div class="wrap_inp">
-                                <label for="password2"
-                                       class="txt_placeholder ">비밀번호
-                                    재확인</label> <!-- 텍스트 입력 시 .screen_out  -->
-                                <input type="password" id="password2" name="password2" class="inp_info pw"
-                                       value="" maxlength="32">
-                                <span class="mark_valid" style="display: none;">불일치</span>
-                            </div>
-                            <p class="txt_message" style="display: none;"></p>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="box_info">
-                    <dl class="item_info">
-                        <dt><label for="inpNmae" class="lab_info">이름</label></dt>
-                        <dd>
-                            <div class="wrap_inp">
-                                <label for="name" class="txt_placeholder ">이름</label>
-                                <!-- 텍스트 입력 시 .screen_out  -->
-                                <input type="text" id="name" name="name" class="inp_info" value="" maxlength="30">
-                                <span class="mark_valid"><span class="ico_join ico_valid"></span><span class="screen_out">유효</span></span>
-                            </div>
-                            <p class="txt_message" style="display: none;"></p>
-                        </dd>
-                    </dl>
-                    <dl id="countryListContainer" class="item_info info_phone">
-                        <dt><label for="inpPhone" class="lab_info">휴대폰 번호</label></dt>
-                        <dd>
-                            <div class="wrap_inp">
-                                <label for="inpPhone" class="txt_placeholder">휴대폰 번호</label>
-                                <!-- 텍스트 입력 시 .screen_out  -->
-                                <a href="javascript:;" class="num_nation" id="numNation">
-                                    <span class="ico_join"></span>
-                                    <span class="link_nationnum"></span>
-                                </a>
-                                <input type="hidden" id="mobileNational" name="mobileNational" value="">
-                                <input type="hidden" id="mobileNationalCode" name="mobileNationalCode" value="">
-                                <input type="hidden" id="mobileInternationalFormat" name="mobileInternationalFormat" value="">
-                                <input type="text" id="inpPhone" name="inpPhone" class="inp_info" autocomplete="off">
-                                <button type="button" id="certBtn" class="btn_check disabled">인증</button>
-                            </div>
-                            <div class="wrap_nationinfo">
-                                <div class="box_search">
-                                    <span class="ico_join"></span>
-                                    <label for="inpNationInfo" class="txt_placeholder">국가 검색(국가번호, 국가명)</label>
-                                    <!-- 입력 시 .screen_out -->
-                                    <input id="inpNationInfo" type="text" class="inp_nation">
-                                </div>
-                                <a href="javascript:;" class="link_nationinfo"></a>
-                                <ul class="list_nationinfo"></ul>
-                            </div>
-                        </dd>
-                    </dl>
-                    <dl class="item_info info_phone">
-                        <dt><label for="inpCertCode" class="lab_info screen_out">휴대폰 인증 번호</label></dt>
-                        <dd>
-                            <div class="wrap_inp">
-                                <span class="txt_placeholder">인증번호 (10분 동안 유효)</span> <!-- 텍스트 입력 시 .screen_out  -->
-                                <input type="text" id="inpCertCode" name="inpCertCode" class="inp_info" maxlength="6"
-                                       autocomplete="off" disabled>
-                                <button type="button" id="confirmBtn" class="btn_check disabled">확인</button>
-                                <span class="mark_valid" id="matchedCertCodeText" style="display:none;">일치</span>
-                                <!-- 입력 완료 시 .disabled 제거 -->
-                            </div>
-                            <p class="txt_message" style="display: none;"></p>
-                        </dd>
-                    </dl>
-                    <dl class="item_info info_email">
-                        <dt><label for="inpEmail" class="lab_info">본인 확인용<br>이메일 주소</label></dt>
-                        <dd>
-                            <div class="wrap_inp">
-                                <span class="txt_placeholder ">본인확인용 이메일(선택)</span>
-                                <!-- 텍스트 입력 시 .screen_out  -->
-                                <input type="text" id="email" name="email" class="inp_info"
-                                       value="" autocomplete="off">
-                                <span class="mark_valid"><span class="ico_join ico_valid"></span><span class="screen_out">유효</span></span>
-                            </div>
-                            <p class="txt_message" style="display: none;"></p>
-                        </dd>
-                    </dl>
+<!-- common -->
+<script src="/js/ZeroClipboard.js?20170810_1" type="text/javascript" ></script>
+<script src="/js/_jquery/jquery-1.4.2.min.js?20170810_1" type="text/javascript"></script>
+<script src="/js/_jquery/jquery-ui.min.js?20170810_1" type="text/javascript"></script>
+<script src="/js/_jquery/plugin/jquery.numberformatter-1.2.js?20170810_1" type="text/javascript"></script>
+<script src="/js/_jquery/plugin/jquery.sha1.js?20170810_1" type="text/javascript"></script>
+<script src="/js/_jquery/plugin/jquery.i18n.properties.js?20170810_1" type="text/javascript"></script>
+<script src="/js/_jquery/plugin/jquery.caret.js?20170810_1" type="text/javascript"></script>
+<script src="/js/_lib/base64.js?20170810_1" type="text/javascript"></script>
 
-                </div>
-            </div>
-            <div class="wrap_btn">
-                <button type="button" class="link_back"><span class="ico_join"></span>이전으로</button>
-                <button type="submit" class="btn_comm btn_type1">다음 단계</button>
-            </div>
-        </fieldset>
-    </form>
-</div>
+<!-- account join -->
+<script src="/js/default.js?20170810_1" type="text/javascript"></script>
+<script src="/js/account/account_v3.js?20170810_1" type="text/javascript"></script>
+<script src="/js/account/account_auth.js?20170810_1" type="text/javascript"></script>
+<script src="/js/account/join_v3.js?20170810_1" type="text/javascript"></script>
+<script src="/js/c/wmp_countdown.js?20170810_1" type="text/javascript"></script>
+<script src="/js/c/wmp_util.js?20170810_1" type="text/javascript"></script>
 
-    <hr class="hide">
-    <div id="kakaoFoot" class="footer_comm" role="contentinfo">
-        <h2 class="screen_out">서비스 이용정보</h2>
-        <a href="http://policy.daum.net/info/info" target="_blank" class="link_info">서비스 약관</a><span class="txt_bar">|</span>
-        <a href="http://policy.daum.net/info_protection/info_protection" target="_blank" class="link_info">개인정보처리방침</a><span class="txt_bar">|</span>
-                    <a href="http://cs.daum.net/faq/59/8034.html" target="_blank" class="link_info">회원가입 도움말</a>
-                <div class="txt_copyright">© <a href="http://www.kakaocorp.com/main" class="link_daum" target="_blank">Kakao Corp.</a></div>
-    </div>
-</div>
-
-<script type="text/javascript" src="https://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
-    var _tiq = 'undefined' !== typeof _tiq ? _tiq : [];
-    _tiq.push(['__trackPageview']);
-    (function(d) {
-        var se = d.createElement('script'); se.type = 'text/javascript'; se.async = true;
-        se.src = location.protocol + '//m2.daumcdn.net/tiara/js/td.min.js';
-        var s = d.getElementsByTagName('head')[0]; s.appendChild(se);
-    })(document);
+var isBusinessUser = 0;
+
+function updateNumberOfDays(){
+	$('#select_day').html('<a href="javascript:void(0);" class="selected" data-id="selected" dg-data="일">일</a>');
+	var month = $('#selected_month').attr('dg-data');
+	var year = $('#selected_year').attr('dg-data');
+	$('#selected_day').attr('dg-data', '일');
+	$('#selected_day').text('일');
+	var days = daysInMonth(month, year);
+	for(var i=1; i < days+1 ; i++){
+		$('#select_day').append('<a href="javascript:void(0);" dg-data="'+i+'">'+i+'</a>');
+	}
+
+	$('#select_day a').bind('click', function() {
+		$this = $(this);
+		search_name = $(this).attr('dg-data');
+
+		$this.parent().find('[data-id="selected"]').removeClass('selected').removeAttr('data-id');
+		$this.addClass('selected').attr('data-id','selected');
+		$this.parents('[data-id="select_area"]').children('a').attr('dg-data',search_name).text(search_name);
+		$this.parents('[data-id="select_area"]').removeClass('unfold');
+
+		var day = $('#selected_day').attr('dg-data');
+		var month = $('#selected_month').attr('dg-data');
+		var year = $('#selected_year').attr('dg-data');
+		if(isNaN(day) || isNaN(month) || isNaN(year)) {
+			$('#agree_birth').attr('checked', false);
+			$('#birth_error').show();
+		} else {
+			$('#birth_error').hide();
+		}
+	});
+}
+
+function daysInMonth(month, year) {
+	return new Date(year, month, 0).getDate();
+}
+
+$(document).ready(function() {
+	memberServer = 'https://member.wemakeprice.com';
+	webServer = 'http://member.wemakeprice.com';
+});
+
+var ver_src = $.browser.version, version_data = ver_src.split(".");
+$(function() {
+	// 브라우저 종류, 버전 체크
+	if($.browser.msie) {
+		$('body').attr("id", "ie").attr("class", "ie"+version_data[0]);
+	} else if($.browser.webkit) {
+		$('body').attr("id", "cr").attr("class", "cr"+version_data[0]);
+	} else if($.browser.mozilla) {
+		$('body').attr("id", "ff").attr("class", "ff"+version_data[0]);
+	} else {
+		$('body').attr("id", "other").attr("class", "other"+version_data[0]);
+	}
+
+	// IE8일 경우 INPUT FOCUS BUG 해결
+	if(($.browser.msie == true) && (version_data[0] <= 8)) {
+		$('input').focus().blur();
+	}
+
+	for (var i = new Date().getFullYear() - 14; i > 1909; i--) {
+		$('#select_year').append('<a href="javascript:void(0);" dg-data="'+i+'">'+i+'</a>');
+	}
+	for (i = 1; i < 13; i++) {
+		$('#select_month').append('<a href="javascript:void(0);" dg-data="'+i+'">'+i+'</a>');
+	}
+	updateNumberOfDays();
+
+	// SELECT BOX
+	var search_name = 0;
+	var $selectArea = $('[data-id="select_area"]');
+
+	$('[data-id="select_active"]').bind('click', function(e) {
+		$this = $(this);
+		$this.parent().toggleClass('unfold');
+		$selectArea.not($this.parent()).removeClass('unfold');
+		e.stopPropagation();
+	});
+
+	$(document).bind('click', function(e){
+		if ($(e.target).parents('[data-id="select_area"]').length == 0) {
+			$selectArea.removeClass('unfold');
+		}
+	});
+
+	$('[data-id="select_list"] a').bind('click', function() {
+		$this = $(this);
+		search_name = $(this).attr('dg-data');
+
+		$this.parent().find('[data-id="selected"]').removeClass('selected').removeAttr('data-id');
+		$this.addClass('selected').attr('data-id','selected');
+		$this.parents('[data-id="select_area"]').children('a').attr('dg-data',search_name).text(search_name);
+		$this.parents('[data-id="select_area"]').removeClass('unfold');
+
+		if ($this.parents('[data-id="select_area"]').children('a').attr('id') == 'selected_year' || $this.parents('[data-id="select_area"]').children('a').attr('id') == 'selected_month'){
+			updateNumberOfDays();
+		}
+
+		if ($this.parents('[data-id="select_area"]').children('a').attr('id') == 'uemail2') {
+			var uemail2 = $('#uemail2').attr('dg-data');
+			if($this.index() == 0) {
+				$('#uemail_direct').val('').attr('disabled', false).focus();
+			} else {
+				$('#uemail_direct').val(uemail2).attr('disabled', true);
+			}
+			displayHide("uemail_error");
+			email_dup_check();
+		}
+	});
+
+	$(':radio[name="select_sex"]').click(function() {
+		var sex = $(':radio[name="select_sex"]:checked').val();
+		if(sex != undefined) {
+			$('#sex_error').hide();
+		}
+	});
+
+	// 160405 #MOBILE-997
+	// app푸시동의 여부를 약관에 녹이기, 해당 영역 제거
+	/*$('[data-id="agree_event_select_all"]').click(function() {
+		setTimeout(function() {
+			if ($('[data-id="agree_event_select_all"]').attr('checked') == true) {
+				$('[data-id="check_agree_event"]').attr('checked', true);
+			} else {
+				$('[data-id="check_agree_event"]').attr('checked', false);
+			}
+		}, 50);
+	});
+
+	$('[data-id="check_agree_event"]').each(function() {
+		$(this).change(function() {
+			if ($('[data-id="check_agree_event"]').length == $('[data-id="check_agree_event"]:checked').length) {
+				$('[data-id="agree_event_select_all"]').attr('checked', true);
+			} else {
+				$('[data-id="agree_event_select_all"]').attr('checked', false);
+			}
+		});
+	});*/
+
+	// 선택항목 전체동의
+	$('[data-id="agree_optional_info_select_all"]').click(function() {
+		$('#sex_error').hide();
+		$('#birth_error').hide();
+
+		setTimeout(function() {
+			if ($('[data-id="agree_optional_info_select_all"]').attr('checked') == true) {
+				var day = $('#selected_day').attr('dg-data');
+				var month = $('#selected_month').attr('dg-data');
+				var year = $('#selected_year').attr('dg-data');
+				if(isNaN(day) || isNaN(month) || isNaN(year)) {
+					$('#birth_error').show();
+				}
+
+				var sex = $(':radio[name="select_sex"]:checked').val();
+				if(sex == undefined) {
+					$('#sex_error').show();
+				}
+
+				$('[data-id="check_agree_optional_info"]').attr('checked', true);
+			} else {
+				$('[data-id="check_agree_optional_info"]').attr('checked', false);
+			}
+		}, 50);
+	});
+
+	$('[data-id="check_agree_optional_info"]').each(function() {
+		$(this).change(function() {
+			if ($('[data-id="check_agree_optional_info"]').length == $('[data-id="check_agree_optional_info"]:checked').length) {
+				$('[data-id="agree_optional_info_select_all"]').attr('checked', true);
+			} else {
+				$('[data-id="agree_optional_info_select_all"]').attr('checked', false);
+			}
+
+			if($('#agree_sex')[0].checked) {
+				var sex = $(':radio[name="select_sex"]:checked').val();
+				if(sex == undefined) {
+					$('#sex_error').show();
+				}
+			} else {
+				$('#sex_error').hide();
+			}
+
+			if (!isBusinessUser) {
+				if($('#agree_birth')[0].checked) {
+					var day = $('#selected_day').attr('dg-data');
+					var month = $('#selected_month').attr('dg-data');
+					var year = $('#selected_year').attr('dg-data');
+					if(isNaN(day) || isNaN(month) || isNaN(year)) {
+						$('#birth_error').show();
+					}
+				} else {
+					$('#birth_error').hide();
+				}
+			}
+		});
+	});
+
+	// INPUT
+	var sel_text = '';
+	$('input').bind('focus blur', function(event) {
+		sel_text = $(this).attr('dg-data');
+
+		if((event.type == 'focus') && ($(this).val() == '이메일') || ($(this).val() == '이름 ') || ($(this).val() == '담당자 이름') || ($(this).val() == '휴대폰번호') || ($(this).val() == '인증번호') || ($(this).val() == '아이디')) {
+			$(this).removeClass('off').val('');
+		} else if((event.type == 'blur') && ($(this).val() == '')) {
+			$(this).addClass('off').val(sel_text);
+		}
+	});
+
+	// 이메일 대문자 입력시 소문자 변경
+	$('#uemail1, #uemail_direct').bind('keyup', function() {
+		if(navigator.userAgent.match(/Trident\/7\./)) {
+			$(this).val(function (_, v) {
+				return v.replace(/\s+/g, '').toLowerCase();
+			});
+		} else {
+			var val = $(this).val();
+			var pattern = /\s+/g;
+			if (val.match(pattern)) {
+				var pos = $(this).caret();
+				pos = (pos > 0) ? pos - 1 : 0;
+				$(this).val(function (_, v) {
+					return v.replace(pattern, '');
+				});
+				$(this).caret(pos);
+			}
+
+			if (val != val.toLowerCase()) {
+				var pos = $(this).caret();
+				pos = (pos > 0) ? pos : 0;
+				$(this).val(function (_, v) {
+					return v.toLowerCase();
+				});
+				$(this).caret(pos);
+			}
+		}
+	});
+});
+</script>
+</head>
+
+<body onLoad="return false;">
+<div id="wmpSkip">
+	<a href="#header" onclick="skipNavigation('#header');return false;"><span>메뉴 바로가기</span></a>
+	<a href="#container" onclick="skipNavigation('#container');return false;"><span>본문 바로가기</span></a>
+</div>
+<div id="wrap">
+	<div id="header">
+		<div class="header_inner">
+			<h1 class="logo_wmp_v3"><a href="http://wemakeprice.com/">특가대표! 위메프</a></h1>
+			<ul class="header_link">
+				<li class="link_main"><a href="http://www.wemakeprice.com/">위메프 메인</a></li>
+				<li class="link_cc"><a href="http://www.wemakeprice.com/customer_center/">고객센터</a></li>
+				<li class="link_notice"><a href="http://www.wemakeprice.com/board_notice/notice_list/">공지사항</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="container">
+		<h2 id="skip_cont" class="hide">컨텐츠영역</h2>
+		<!-- 회원가입 -->
+		<div class="wmp_join">
+			<div class="join_banner">
+								<map name="unitopbn8">
+			    				</map>
+			</div>
+			<form id="frm" onSubmit="return false;" method="post" autocomplete="off">
+				<fieldset>
+					<legend>회원가입</legend>
+					<input type="hidden" name="authType" id="authType" value=""/>
+					<input type="hidden" name="u_name" id="u_name" value=""/>
+					<input type="hidden" name="u_sex" id="u_sex" value=""/>
+					<input type="hidden" name="u_birth" id="u_birth" value=""/>
+					<input type="hidden" name="u_mobile" id="u_mobile" value=""/>
+					<input type="hidden" name="u_ciscr_hash" id="u_ciscr_hash" value=""/>
+					<input type="hidden" name="u_discr_hash" id="u_discr_hash" value=""/>
+					<input type="hidden" name="u_discr_no" id="u_discr_no" value=""/>
+					<input type="hidden" name="u_certificate_type" id="u_certificate_type" value=""/>
+					<div class="join_content">
+						<!-- 필수 정보 -->
+						<div class="wrap_cont_necessary">
+							<h3 class="tit_wmp_join tit_join_member">회원가입</h3>
+
+							
+							<h4 class="tit_wmp_join tit_join_necessary mg-section-sm">필수 정보</h4>
+							<div class="necessary_input">
+																<!-- 이메일 -->
+								<div class="wrap_text_field">
+									<input type="text" id="uemail1" class="text_field" value="이메일" dg-data="이메일" style="width:128px;">
+									<span class="txt_mail">@</span>
+									<input type="text" id="uemail_direct" class="text_field" value="" style="width:128px;">
+									<div class="select_area email" data-id="select_area">
+										<a href="javascript:void(0);" class="optbox_sel" dg-data="직접입력" id="uemail2" data-id="select_active">직접입력</a>
+										<div class="optbox_list" data-id="select_list">
+											<a href="javascript:void(0);" class="selected" data-id="selected" dg-data="직접입력">직접입력</a>
+											<a href="javascript:void(0);" dg-data="naver.com">naver.com</a>
+											<a href="javascript:void(0);" dg-data="hanmail.net">hanmail.net</a>
+											<a href="javascript:void(0);" dg-data="nate.com">nate.com</a>
+											<a href="javascript:void(0);" dg-data="gmail.com">gmail.com</a>
+											<a href="javascript:void(0);" dg-data="lycos.co.kr">lycos.co.kr</a>
+											<a href="javascript:void(0);" dg-data="yahoo.co.kr">yahoo.co.kr</a>
+											<a href="javascript:void(0);" dg-data="yahoo.com">yahoo.com</a>
+											<a href="javascript:void(0);" dg-data="empal.com">empal.com</a>
+											<a href="javascript:void(0);" dg-data="dreamwiz.com">dreamwiz.com</a>
+											<a href="javascript:void(0);" dg-data="paran.com">paran.com</a>
+											<a href="javascript:void(0);" dg-data="korea.com">korea.com</a>
+											<a href="javascript:void(0);" dg-data="chol.com">chol.com</a>
+											<a href="javascript:void(0);" dg-data="hanmir.com">hanmir.com</a>
+											<a href="javascript:void(0);" dg-data="hanafos.com">hanafos.com</a>
+											<a href="javascript:void(0);" dg-data="freechal.com">freechal.com</a>
+											<a href="javascript:void(0);" dg-data="hotmail.com">hotmail.com</a>
+											<a href="javascript:void(0);" dg-data="netian.com">netian.com</a>
+										</div>
+									</div>
+								</div>
+								<p id="uemail_error" class="help_block">
+									아이디로 사용할 이메일을 입력해 주시기 바랍니다.
+								</p>
+								<p id="uemail_dup_error" class="help_block">
+									이미 사용중인 이메일 입니다. 다른 이메일을 입력해 주세요.
+									<span id="email_dup_login" class="email_login">
+										<a href="javascript:void(0);" onclick="location.href=memberServer+'/member/login/'+location.search">로그인</a>
+										<span class="txt_bar">|</span>
+										<a href="javascript:void(0);" onclick="window.open('/member/lost/pw/popup/','WeMakePrice','width=425,height=470,status=0,menu=0');">비밀번호 찾기</a>
+									</span>
+								</p>
+								<p id="uemail_illegal_error" class="help_block">
+									도용 신고 접수된 이메일입니다. 다른 이메일을 입력해 주세요.
+									<span class="email_login">
+										<a href="javascript:void(0);" onclick="location.href=memberServer+'/member/login/'+location.search">로그인</a>
+										<span class="txt_bar">|</span>
+										<a href="javascript:void(0);" onclick="window.open('/member/lost/pw/popup/','WeMakePrice','width=425,height=470,status=0,menu=0');">비밀번호 찾기</a>
+									</span>
+								</p>
+								<p id="uemail_withdraw_div" class="help_block">
+									탈퇴 신청 중인 이메일 입니다. 탈퇴신청을 철회하시려면 ->
+									<a href="javascript:void(0);" onclick="location.href=memberServer+'/member/login/'+location.search">로그인</a>
+								</p>
+								<!-- //이메일 -->
+																								<!-- 비밀번호 -->
+								<div class="wrap_text_field">
+									<div class="wrap_pass_field">
+										<div class="clear_fix">
+											<!-- <label for="upw" id="label_upw">비밀번호</label> -->
+											<input type="password" id="upw" class="text_field" name="upw" maxlength="15" style="width:213px;">
+										</div>
+										<p id="upw_error" class="help_block">비밀번호를 입력해주세요.</p>
+									</div>
+									<div class="wrap_pass_field">
+										<div class="clear_fix">
+											<label for="urepw" id="label_urepw">비밀번호 재확인</label>
+											<input type="password" id="urepw" class="text_field" name="urepw" maxlength="15" style="width:213px;" disabled>
+										</div>
+										<p id="urepw_error" class="help_block">입력하신 비밀번호가 일치하지 않습니다.</p>
+									</div>
+								</div>
+								<!-- //비밀번호 -->
+								<!-- 이름, 휴대폰번호/기본 -->
+								<div class="wrap_text_field">
+									<div class="wrap_name_field">
+										<div class="clear_fix">
+																							<input type="text" id="uname" name="uname" class="text_field" style="width:213px;" value="이름 " dg-data="이름 " />
+																																</div>
+										<p id="uname_error" class="help_block">이름을 입력해주세요.</p>
+									</div>
+									<div class="wrap_name_field">
+										<input type="text" id="umobile" class="text_field" style="width:213px;" maxlength="13" value="휴대폰번호" dg-data="휴대폰번호" />
+									</div>
+								</div>
+								<p class="help_block help_block_notice ico_dot" id="mobile_notice">휴대폰번호는 아이디 또는 비밀번호를 찾기 위한 정보이므로 정확하게 입력해 주세요.</p>
+								<div class="help_box" id="div_sms_auth_overlap" style="display:none;">
+									<p class="help_txt_red"><span id="sms_overlap_id"></span> 아이디로 가입된 휴대폰번호입니다.</p>
+									<ul class="login_area">
+										<li><a href="javascript:void(0);" id="btn_login">로그인</a></li>
+										<li><a href="javascript:void(0);" id="btn_search_pw">비밀번호 찾기</a></li>
+									</ul>
+									<span class="help_txt_black">새로 가입하시려면, 휴대폰 점유인증을 해주세요.</span>
+									<button type="button" class="btn_wmp_join btn_wmp_white btn_small" id="btn_sms_send">
+										<span class="inner">인증번호 받기</span>
+									</button>
+								</div>
+								<div class="help_box" id="div_sms_auth" style='display:none;'>
+									<div class="wrap_text_field">
+										<input type="text" id="txt_sms_auth" class="text_field" style="width:200px;" value="인증번호" dg-data="인증번호">
+										<button type="button" class="btn_wmp_join btn_certification btn_wmp_red" id="btn_sms_auth">
+											<span class="inner_small">인증하기</span>
+										</button>
+										<button type="button" class="btn_wmp_join btn_certification btn_wmp_gray" id="btn_sms_reAuth">
+											<span class="inner_small">재발송</span>
+										</button>
+										<input type="hidden" id='join_sms_hidden' />
+									</div>
+									<div class="time_area" id="umobile_error">
+										<span class="help_txt_black">인증번호가 전송되었습니다.</span>
+										<span class="help_txt_red">남은 시간 04:59</span>
+									</div>
+								</div>
+								<div class="help_box" id="div_sms_auth_complete" style='display:none;'>
+									<span class="help_txt_black">휴대폰 점유인증이 완료되었습니다. 가입을 진행해 주세요.</span>
+									<button type="button" class="btn_wmp_join btn_wmp_white btn_small" id="btn_sms_auth_cancel">
+										<span class="inner">인증 취소</span>
+									</button>
+								</div>
+
+								
+																<!-- //이름, 휴대폰번호/기본 -->
+								<!-- 생년월일 -->
+								<div class="wrap_text_field">
+									<div class="select_area year" data-id="select_area" data-select-value="year">
+										<a href="javascript:void(0);" class="optbox_sel" dg-data="생년" data-id="select_active" id="selected_year">생년</a>
+										<div class="optbox_list" data-id="select_list" id="select_year">
+											<a href="javascript:void(0);" class="selected" data-id="selected" dg-data="생년">생년</a>
+										</div>
+									</div>
+									<div class="select_area month" data-id="select_area" data-select-value="month">
+										<a href="javascript:void(0);" class="optbox_sel" dg-data="월" data-id="select_active" id="selected_month">월</a>
+										<div class="optbox_list" data-id="select_list" id="select_month">
+											<a href="javascript:void(0);" class="selected" data-id="selected" dg-data="월">월</a>
+										</div>
+									</div>
+									<div class="select_area day" data-id="select_area" data-select-value="day">
+										<a href="javascript:void(0);" class="optbox_sel" dg-data="일" data-id="select_active" id="selected_day">일</a>
+										<div class="optbox_list" data-id="select_list" id="select_day">
+											<a href="javascript:void(0);" class="selected" data-id="selected" dg-data="일">일</a>
+										</div>
+									</div>
+								</div>
+								<p id="birth_error" class="help_block">생년월일을 입력해 주세요.</p>
+								<!-- //생년월일 -->
+																<!-- 이용약관동의 -->
+								<div class="wrap_text_field wrap_agree_area">
+									<div class="wrap_check_agree">
+										<strong>이용약관 동의</strong>
+										<a href="/customer_center/agreement" class="btn_wmp_join btn_wmp_white btn_small" target="_blank">
+											<span class="inner">내용보기</span>
+										</a>
+									</div>
+								</div>
+								<p class="help_block help_block_notice ico_dot">본 약관에는 마케팅 정보 수신에 대한 동의에 관한 내용이 포함되어 있으며, 회원은 언제든지 정보 메시지 수신 설정 메뉴에서 수신 거부로 변경할 수 있습니다.</p>
+								<p class="help_block">이용약관동의 여부를 체크해주세요.</p>
+								<!-- //이용약관동의 -->
+								<!-- 개인정보 수집 및 이용안내 -->
+								<p class="tit_wmp_join tit_agree_collecting">개인정보 수집 및 이용안내</p>
+								<table summary="개인정보 수집 및 이용안내 목적, 항목, 보유 및 이용기간에 대한 정보 제공">
+									<caption>개인정보 수집 및 이용안내</caption>
+									<colgruop>
+										<col width="34%" />
+										<col width="33%" />
+										<col width="33%" />
+									</colgruop>
+									<thead>
+										<tr>
+											<th>
+												목적
+											</th>
+											<th>
+												항목
+											</th>
+											<th>
+												보유 및 이용 기간
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+																						<td>
+												이용자 식별,<br/> 서비스 이용 및 상담, <br/>연령확인
+											</td>
+											<td>
+												이름, 이메일,<br/>비밀번호, 휴대전화번호,<br/>생년월일(입력)
+											</td>
+																																	<td>
+												회원탈퇴 후 5일 까지
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- //개인정보 수집 및 이용안내 -->
+							</div>
+						</div>
+						<!-- //필수 정보 -->
+						<!-- 부가 정보 -->
+						<div class="wrap_cont_select">
+							<h4 class="tit_wmp_join tit_join_select">부가 정보</h4>
+														<!-- 성별, 전체동의 -->
+							<div class="wrap_text_field wrap_agree_area">
+								<div class="select_sex">
+									<span class="txt_sex">성별</span>
+									<div class="wrap_check_agree">
+										<label>
+											<input type="radio" class="check" name="select_sex" value="1" />
+											남자
+										</label>
+									</div>
+									<div class="wrap_check_agree">
+										<label>
+											<input type="radio" class="check" name="select_sex" value="2" />
+											여자
+										</label>
+									</div>
+									<p id="sex_error" class="help_block">성별 정보를 입력해주세요.</p>
+								</div>
+							</div>
+							<!-- //성별, 전체동의 -->
+							<!-- 선택항목 전체동의 동의 -->
+							<div class="wrap_text_field wrap_agree_area">
+								<div class="wrap_check_agree">
+									<label>
+										<input type="checkbox" class="check" data-id="agree_optional_info_select_all" />
+										<strong>전체동의</strong>
+									</label>
+																		<span>
+										(
+										<label>
+											<input type="checkbox" id="agree_sex" data-id="check_agree_optional_info" class="check" name="agree_sex">
+											성별 수집동의
+										</label>
+									</span>
+									<span>
+										<label>
+											<input type="checkbox" id="agree_birth" data-id="check_agree_optional_info" class="check" name="agree_birth">
+											생년월일 수집동의 )
+										</label>
+									</span>
+																										</div>
+							</div>
+							<!-- //선택항목 전체동의 동의 -->
+							<p class="help_block_notice_red"> 선택항목은 동의하지 않아도 회원가입이 가능하며, 원하는 항목만 동의할 수 있습니다.</p>
+							<!-- 개인정보 수집 및 이용안내 -->
+							<p class="tit_wmp_join tit_agree_collecting">개인정보 수집 및 이용안내</p>
+							<table summary="개인정보 수집 및 이용안내 목적, 항목, 보유 및 이용기간에 대한 정보 제공">
+								<caption>개인정보 수집 및 이용안내</caption>
+								<colgruop>
+									<col width="34%" />
+									<col width="33%" />
+									<col width="33%" />
+								</colgruop>
+								<thead>
+									<tr>
+										<th>
+											목적
+										</th>
+										<th>
+											항목
+										</th>
+										<th>
+											보유 및 이용 기간
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											맞춤형 상품 추천 등<br/>마케팅 활용
+										</td>
+										<td>
+											성별, 생년월일 																					</td>
+										<td>
+											회원탈퇴 후 5일 까지
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- //개인정보 수집 및 이용안내 -->
+							<div class="wrap_center_btn">
+								<button type="submit" id="joinConfirmBtn" class="btn_wmp_join btn_wmp_red btn_large">
+									<span class="inner">동의하고 회원가입</span>
+								</button>
+							</div>
+						</div>
+						<!-- //선택 항목 -->
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<!-- //회원가입 -->
+	</div>
+	<!-- // container -->
+
+	<!-- Footer -->
+	<input type="hidden" id="utmcmd" value="organic" />
+	<input type="hidden" id="utmcsr" value="naver" />
+
+	<!-- Footer -->
+<div id="footerSsl">
+	<!--141105 푸터변경-->
+	<div class="policy">
+		<h2 class="hide">관련사이트</h2>
+		<ul class="site_menu">
+			<li class="blog"><a href="http://company.wemakeprice.com/wmp/" target="_blank">기업소개</a></li>
+			<li class="employ"><a href="https://recruit.wemakeprice.com/notice/list" target="_blank">인재채용</a></li>
+			<li class="stipulation"><a href="http://www.wemakeprice.com/customer_center/agreement/">이용약관</a></li>
+			<li class="private"><a href="http://www.wemakeprice.com/customer_center/private_policy/">개인정보처리방침</a></li>
+			<li class="private_youth"><a href="http://www.wemakeprice.com/customer_center/youth_policy/">청소년보호정책</a></li>
+			<li class="coalition"><a href="http://www.wemakeprice.com/guide_book/contact_info">제휴문의</a></li>
+			<li class="sevice"><a href="http://www.wemakeprice.com/promotion/wonder_0/preview">고객서비스</a></li>
+		</ul>
+	</div>
+	<div class="footer_company">
+		<h2 class="hide">회사정보</h2>
+		<a class="company_logo" href="http://wemakeprice.com/main">특가대표! 위메프</a>
+		<div class="company_info">
+			<dl>
+				<dt class="hide">회사명 :</dt>
+				<dd>(주)위메프 (대표이사 : 박은상)</dd>
+				<dt>주소 :</dt>
+				<dd><address>서울특별시 강남구 영동대로 502 위메프빌딩</address></dd>
+			</dl>
+			<dl>
+				<dt class="fst">사업자등록번호 :</dt>
+				<dd>120-87-55227</dd>
+				<dt>통신판매업신고번호 :</dt>
+				<dd>제 2010 서울 강남 02066호</dd>
+				<dd><a class="operator" href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=1208755227" target="_blank">사업자정보 확인</a></dd>
+			</dl>
+			<dl>
+				<dt class="fst">관광사업등록번호 :</dt>
+				<dd>제2010-000024호</dd>
+				<dt>개인정보보호책임자 :</dt>
+				<dd>신명주 (<a href="mailto:tec@wemakeprice.com">tec@wemakeprice.com</a>)</dd>
+			</dl>
+			<p class="phone_number">
+				<span class="num_client">
+					고객센터 1588-4763, 평일 9:00~18:00, 주말/공휴일 10:00~17:00
+					<a class="link_faq" href="http://www.wemakeprice.com/customer_center/faq">전화문의 전 클릭</a>
+				</span>
+				<span class="num_coalition">
+					파트너센터 1644-4796, 평일 9:00 ~ 18:00, 토요일 10:00 ~ 17:00, 점심시간 12:00~13:00, 일요일/공휴일 휴무
+				</span>
+			</p>
+			<p class="copyright">COPYRIGHT © WEMAKEPRICE INC.&nbsp; ALL RIGHTS RESERVED.</p>
+		</div>
+		<div class="info">
+			<a class="link_notice" href="http://wemakeprice.com/board_notice/notice_view/302" target="_blank">위메프는 주민번호를 수집하지 않습니다.</a>
+			<dl class="bank_notice">
+				<dt>우리은행 채무지급보증 안내</dt>
+				<dd>
+					당사는 고객님이 현금 결제한 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다.
+					<a class="link_security" href="javascript:void(0);" title="새창팝업 서비스 가입사실확인 " onclick="window.open('http://image.wemakeprice.com/images/resources/wmp/common/footer-security-2017.jpg','mark','scrollbars=no,resizable=no,width=580,height=820');">
+						서비스 가입사실 확인
+					</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="footer_brand">
+			<ul>
+				<li class="brand1"><a href="http://www.wemakeprice.com/promotion/brandaward" target="_blank">2014 대한민국 명풍브랜드 대상</a></li>
+				<li class="brand2"><a href="http://www.wemakeprice.com/promotion/brandaward" target="_blank">2014 한국의 가장 사랑받는 브랜드대상</a></li>
+				<li class="brand3"><a href="http://www.wemakeprice.com/promotion/brandaward" target="_blank">모바일 브랜드 대상</a></li>
+				<li class="brand4"><a href="http://www.wemakeprice.com/promotion/brandaward" target="_blank">2014 Korea Top Brand 대상</a></li>
+				<li class="brand5"><a href="http://www.wemakeprice.com/promotion/brandaward" target="_blank">2014 고객감동 브랜드 지수 1위</a></li>
+				<li class="brand6"><a href="http://www.wemakeprice.com/promotion/brandaward" target="_blank">2014 앱 어워드 베스트앱</a></li>
+				<li class="brand7"><a href="http://www.wemakeprice.com/promotion/brandaward" target="_blank">2014 HTHI 2년연속수상</a></li>
+			</ul>
+		</div>
+		<div class="association">
+				<a class="link1" href="http://www.koipa.re.kr" target="_blank">한국지식재산보호원</a>
+				<a class="link2" href="http://www.kolsa.or.kr" target="_blank">한국온라인쇼핑협회 정회원사</a>
+				<span class="link3">위해상품차단시스템 운영매장</span>
+		</div>
+	</div>
+	<!--141105 푸터변경-->
+	</div>
+<!-- // Footer -->
+
+
+
+<div id="fb-root"></div>
+
+<script>
+(function(d){
+	var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	if (d.getElementById(id)) {return;}
+	js = d.createElement('script'); js.id = id; js.async = true;
+	js.src = document.location.protocol+"//connect.facebook.net/ko_KR/all.js";
+	ref.parentNode.insertBefore(js, ref);
+}(document));
+
+window.fbAsyncInit = function() {
+	FB.init({
+		appId		: '122691617829067', // App ID
+		channelUrl	: '//member.wemakeprice.com/social/channel', // Channel File
+		status		: true, // check login status
+		cookie		: true, // enable cookies to allow the server to access the session
+		xfbml		: true,	// parse XFBML
+		oauth		: true
+	});
+	//_ga.trackFacebook();
+
+		
+	
+	if ( typeof(fb_modify_func) == 'function' )
+	{
+		fb_modify_func();
+	}
+};
+
 </script>
 
 
-<script type="text/javascript" src="https://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="/content/js/validation/validation.input.js?v=170810013940"></script>
-<script type="text/javascript" src="/content/js/validation/validation.methods.js?v=170810013940"></script>
-<script type="text/javascript" src="/content/js/validation/validation.messages.js?v=170810013940"></script>
-
-<link rel="stylesheet" href="/content/jquery/jquery-ui-1.10.4.custom.css">
-<script type="text/javascript" src="/content/jquery/jquery-ui-1.10.4.custom.js">
-</script>
 <script type="text/javascript">
+var _gaq = _gaq || [];
 
-    var data;
-    var connLocation;
-    $(document).ready(function () {
-        data = [{"countryCode":"US","phoneCode":"1","countryName":"United States","countryNameKo":"미국","viewOrder":"1"},{"countryCode":"CN","phoneCode":"86","countryName":"China","countryNameKo":"중국","viewOrder":"2"},{"countryCode":"CA","phoneCode":"1","countryName":"Canada","countryNameKo":"캐나다","viewOrder":"3"},{"countryCode":"JP","phoneCode":"81","countryName":"Japan","countryNameKo":"일본","viewOrder":"4"},{"countryCode":"AU","phoneCode":"61","countryName":"Australia","countryNameKo":"호주","viewOrder":"6"},{"countryCode":"PH","phoneCode":"63","countryName":"Philippines","countryNameKo":"필리핀","viewOrder":"7"},{"countryCode":"TH","phoneCode":"66","countryName":"Thailand","countryNameKo":"타이","viewOrder":"8"},{"countryCode":"ID","phoneCode":"62","countryName":"Indonesia","countryNameKo":"인도네시아","viewOrder":"9"},{"countryCode":"TW","phoneCode":"886","countryName":"Taiwan","countryNameKo":"대만","viewOrder":"10"},{"countryCode":"KR","phoneCode":"82","countryName":"Korea, Republic of","countryNameKo":"대한민국","viewOrder":"11"},{"countryCode":"GH","phoneCode":"233","countryName":"Ghana","countryNameKo":"가나"},{"countryCode":"GA","phoneCode":"241","countryName":"Gabon","countryNameKo":"가봉"},{"countryCode":"GY","phoneCode":"592","countryName":"Guyana","countryNameKo":"가이아나"},{"countryCode":"GM","phoneCode":"220","countryName":"Gambia","countryNameKo":"감비아"},{"countryCode":"GP","phoneCode":"590","countryName":"Guadeloupe","countryNameKo":"과들루프"},{"countryCode":"GT","phoneCode":"502","countryName":"Guatemala","countryNameKo":"과테말라"},{"countryCode":"GU","phoneCode":"1671","countryName":"Guam","countryNameKo":"괌"},{"countryCode":"GD","phoneCode":"1473","countryName":"Grenada","countryNameKo":"그레나다"},{"countryCode":"GR","phoneCode":"30","countryName":"Greece","countryNameKo":"그리스"},{"countryCode":"GL","phoneCode":"299","countryName":"Greenland","countryNameKo":"그린란드"},{"countryCode":"GN","phoneCode":"224","countryName":"Guinea","countryNameKo":"기니"},{"countryCode":"GW","phoneCode":"245","countryName":"Guinea-Bissau","countryNameKo":"기니비사우"},{"countryCode":"NA","phoneCode":"264","countryName":"Namibia","countryNameKo":"나미비아"},{"countryCode":"NR","phoneCode":"674","countryName":"Nauru","countryNameKo":"나우루"},{"countryCode":"NG","phoneCode":"234","countryName":"Nigeria","countryNameKo":"나이지리아"},{"countryCode":"AQ","phoneCode":"672","countryName":"Antarctica","countryNameKo":"남극"},{"countryCode":"SS","phoneCode":"211","countryName":"South Sudan","countryNameKo":"남수단"},{"countryCode":"ZA","phoneCode":"27","countryName":"South Africa","countryNameKo":"남아프리카 공화국"},{"countryCode":"NL","phoneCode":"31","countryName":"Netherlands","countryNameKo":"네덜란드"},{"countryCode":"AN","phoneCode":"599","countryName":"Netherlands Antilles","countryNameKo":"네덜란드령 안틸레스"},{"countryCode":"NP","phoneCode":"977","countryName":"Nepal","countryNameKo":"네팔"},{"countryCode":"NO","phoneCode":"47","countryName":"Norway","countryNameKo":"노르웨이"},{"countryCode":"NC","phoneCode":"687","countryName":"New Caledonia","countryNameKo":"누벨칼레도니"},{"countryCode":"NZ","phoneCode":"64","countryName":"New Zealand","countryNameKo":"뉴질랜드"},{"countryCode":"NU","phoneCode":"683","countryName":"Niue","countryNameKo":"니우에"},{"countryCode":"NE","phoneCode":"227","countryName":"Niger","countryNameKo":"니제르"},{"countryCode":"NI","phoneCode":"505","countryName":"Nicaragua","countryNameKo":"니카라과"},{"countryCode":"DK","phoneCode":"45","countryName":"Denmark","countryNameKo":"덴마크"},{"countryCode":"DO","phoneCode":"1829","countryName":"Dominican Republic","countryNameKo":"도미니카 공화국"},{"countryCode":"DO","phoneCode":"1809","countryName":"Dominican Republic","countryNameKo":"도미니카 공화국"},{"countryCode":"DO","phoneCode":"1849","countryName":"Dominican Republic","countryNameKo":"도미니카 공화국"},{"countryCode":"DM","phoneCode":"1767","countryName":"Dominica","countryNameKo":"도미니카 연방"},{"countryCode":"DE","phoneCode":"49","countryName":"Germany","countryNameKo":"독일"},{"countryCode":"TP","phoneCode":"670","countryName":"East Timor","countryNameKo":"동티모르"},{"countryCode":"LA","phoneCode":"856","countryName":"Lao People\u0027s Democratic Republic","countryNameKo":"라오스"},{"countryCode":"LR","phoneCode":"231","countryName":"Liberia","countryNameKo":"라이베리아"},{"countryCode":"LV","phoneCode":"371","countryName":"Latvia","countryNameKo":"라트비아"},{"countryCode":"RU","phoneCode":"7","countryName":"Russian Federation","countryNameKo":"러시아"},{"countryCode":"LB","phoneCode":"961","countryName":"Lebanon","countryNameKo":"레바논"},{"countryCode":"LS","phoneCode":"266","countryName":"Lesotho","countryNameKo":"레소토"},{"countryCode":"RE","phoneCode":"262","countryName":"Reunion","countryNameKo":"레위니옹"},{"countryCode":"RO","phoneCode":"40","countryName":"Romania","countryNameKo":"루마니아"},{"countryCode":"LU","phoneCode":"352","countryName":"Luxembourg","countryNameKo":"룩셈부르크"},{"countryCode":"RW","phoneCode":"250","countryName":"Rwanda","countryNameKo":"르완다"},{"countryCode":"LY","phoneCode":"218","countryName":"Libyan Arab Jamahiriya","countryNameKo":"리비아"},{"countryCode":"LT","phoneCode":"370","countryName":"Lithuania","countryNameKo":"리투아니아"},{"countryCode":"LI","phoneCode":"423","countryName":"Liechtenstein","countryNameKo":"리히텐슈타인"},{"countryCode":"MG","phoneCode":"261","countryName":"Madagascar","countryNameKo":"마다가스카르"},{"countryCode":"MQ","phoneCode":"596","countryName":"Martinique","countryNameKo":"마르티니크"},{"countryCode":"MH","phoneCode":"692","countryName":"Marshall Islands","countryNameKo":"마셜 제도"},{"countryCode":"YT","phoneCode":"269","countryName":"Mayotte","countryNameKo":"마요트"},{"countryCode":"MO","phoneCode":"853","countryName":"Macau","countryNameKo":"마카오"},{"countryCode":"MK","phoneCode":"389","countryName":"Macedonia","countryNameKo":"마케도니아 공화국"},{"countryCode":"MW","phoneCode":"265","countryName":"Malawi","countryNameKo":"말라위"},{"countryCode":"MY","phoneCode":"60","countryName":"Malaysia","countryNameKo":"말레이시아"},{"countryCode":"ML","phoneCode":"223","countryName":"Mali","countryNameKo":"말리"},{"countryCode":"MX","phoneCode":"52","countryName":"Mexico","countryNameKo":"멕시코"},{"countryCode":"MC","phoneCode":"377","countryName":"Monaco","countryNameKo":"모나코"},{"countryCode":"MA","phoneCode":"212","countryName":"Morocco","countryNameKo":"모로코"},{"countryCode":"MU","phoneCode":"230","countryName":"Mauritius","countryNameKo":"모리셔스"},{"countryCode":"MR","phoneCode":"222","countryName":"Mauritania","countryNameKo":"모리타니"},{"countryCode":"MZ","phoneCode":"258","countryName":"Mozambique","countryNameKo":"모잠비크"},{"countryCode":"ME","phoneCode":"382","countryName":"Montenegro","countryNameKo":"몬테네그로"},{"countryCode":"MS","phoneCode":"1664","countryName":"Montserrat","countryNameKo":"몬트세랫"},{"countryCode":"MD","phoneCode":"373","countryName":"Moldova, Republic of","countryNameKo":"몰도바"},{"countryCode":"MV","phoneCode":"960","countryName":"Maldives","countryNameKo":"몰디브"},{"countryCode":"MT","phoneCode":"356","countryName":"Malta","countryNameKo":"몰타"},{"countryCode":"MN","phoneCode":"976","countryName":"Mongolia","countryNameKo":"몽골"},{"countryCode":"VI","phoneCode":"1340","countryName":"Virgin Islands, U.S.","countryNameKo":"미국령 버진아일랜드"},{"countryCode":"MM","phoneCode":"95","countryName":"Myanmar","countryNameKo":"미얀마"},{"countryCode":"FM","phoneCode":"691","countryName":"Micronesia, Federated States of","countryNameKo":"미크로네시아 연방"},{"countryCode":"VU","phoneCode":"678","countryName":"Vanuatu","countryNameKo":"바누아투"},{"countryCode":"BH","phoneCode":"973","countryName":"Bahrain","countryNameKo":"바레인"},{"countryCode":"BB","phoneCode":"1246","countryName":"Barbados","countryNameKo":"바베이도스"},{"countryCode":"BS","phoneCode":"1242","countryName":"Bahamas","countryNameKo":"바하마"},{"countryCode":"BD","phoneCode":"880","countryName":"Bangladesh","countryNameKo":"방글라데시"},{"countryCode":"BM","phoneCode":"1441","countryName":"Bermuda","countryNameKo":"버뮤다"},{"countryCode":"BJ","phoneCode":"229","countryName":"Benin","countryNameKo":"베냉"},{"countryCode":"VE","phoneCode":"58","countryName":"Venezuela","countryNameKo":"베네수엘라"},{"countryCode":"VN","phoneCode":"84","countryName":"Vietnam","countryNameKo":"베트남"},{"countryCode":"BE","phoneCode":"32","countryName":"Belgium","countryNameKo":"벨기에"},{"countryCode":"BY","phoneCode":"375","countryName":"Belarus","countryNameKo":"벨라루스"},{"countryCode":"BZ","phoneCode":"501","countryName":"Belize","countryNameKo":"벨리즈"},{"countryCode":"BA","phoneCode":"387","countryName":"Bosnia and Herzegovina","countryNameKo":"보스니아 헤르체고비나"},{"countryCode":"BW","phoneCode":"267","countryName":"Botswana","countryNameKo":"보츠와나"},{"countryCode":"BO","phoneCode":"591","countryName":"Bolivia","countryNameKo":"볼리비아"},{"countryCode":"BI","phoneCode":"257","countryName":"Burundi","countryNameKo":"부룬디"},{"countryCode":"BF","phoneCode":"226","countryName":"Burkina Faso","countryNameKo":"부르키나파소"},{"countryCode":"BT","phoneCode":"975","countryName":"Bhutan","countryNameKo":"부탄"},{"countryCode":"MP","phoneCode":"1670","countryName":"Northern Mariana Islands","countryNameKo":"북마리아나 제도"},{"countryCode":"BG","phoneCode":"359","countryName":"Bulgaria","countryNameKo":"불가리아"},{"countryCode":"BR","phoneCode":"55","countryName":"Brazil","countryNameKo":"브라질"},{"countryCode":"BN","phoneCode":"673","countryName":"Brunei Darussalam","countryNameKo":"브루나이"},{"countryCode":"WS","phoneCode":"685","countryName":"Samoa","countryNameKo":"사모아"},{"countryCode":"SA","phoneCode":"966","countryName":"Saudi Arabia","countryNameKo":"사우디아라비아"},{"countryCode":"SM","phoneCode":"378","countryName":"San Marino","countryNameKo":"산마리노"},{"countryCode":"ST","phoneCode":"239","countryName":"Sao Tome and Principe","countryNameKo":"상투메 프린시페"},{"countryCode":"PM","phoneCode":"508","countryName":"Saint Pierre and Miquelon","countryNameKo":"생피에르 미클롱"},{"countryCode":"SN","phoneCode":"221","countryName":"Senegal","countryNameKo":"세네갈"},{"countryCode":"RS","phoneCode":"381","countryName":"Serbia","countryNameKo":"세르비아"},{"countryCode":"SC","phoneCode":"248","countryName":"Seychelles","countryNameKo":"세이셸"},{"countryCode":"LC","phoneCode":"1758","countryName":"Saint Lucia","countryNameKo":"세인트루시아"},{"countryCode":"VC","phoneCode":"1784","countryName":"Saint Vincent and the Grenadines","countryNameKo":"세인트빈센트 그레나딘"},{"countryCode":"KN","phoneCode":"1869","countryName":"Saint Kitts and Nevis","countryNameKo":"세인트키츠 네비스"},{"countryCode":"SH","phoneCode":"290","countryName":"Saint Helena","countryNameKo":"세인트헬레나"},{"countryCode":"SO","phoneCode":"252","countryName":"Somalia","countryNameKo":"소말리아"},{"countryCode":"SB","phoneCode":"677","countryName":"Solomon Islands","countryNameKo":"솔로몬 제도"},{"countryCode":"SD","phoneCode":"249","countryName":"Sudan","countryNameKo":"수단"},{"countryCode":"SR","phoneCode":"597","countryName":"Suriname","countryNameKo":"수리남"},{"countryCode":"LK","phoneCode":"94","countryName":"Sri Lanka","countryNameKo":"스리랑카"},{"countryCode":"SZ","phoneCode":"268","countryName":"Swaziland","countryNameKo":"스와질란드"},{"countryCode":"SE","phoneCode":"46","countryName":"Sweden","countryNameKo":"스웨덴"},{"countryCode":"CH","phoneCode":"41","countryName":"Switzerland","countryNameKo":"스위스"},{"countryCode":"ES","phoneCode":"34","countryName":"Spain","countryNameKo":"스페인"},{"countryCode":"SK","phoneCode":"421","countryName":"Slovakia","countryNameKo":"슬로바키아"},{"countryCode":"SI","phoneCode":"386","countryName":"Slovenia","countryNameKo":"슬로베니아"},{"countryCode":"SY","phoneCode":"963","countryName":"Syrian Arab Republic","countryNameKo":"시리아"},{"countryCode":"SL","phoneCode":"232","countryName":"Sierra Leone","countryNameKo":"시에라리온"},{"countryCode":"SX","phoneCode":"1721","countryName":"Sint Maarten (Dutch part)","countryNameKo":"신트마르턴"},{"countryCode":"SG","phoneCode":"65","countryName":"Singapore","countryNameKo":"싱가포르"},{"countryCode":"AE","phoneCode":"971","countryName":"United Arab Emirates","countryNameKo":"아랍에미리트"},{"countryCode":"AW","phoneCode":"297","countryName":"Aruba","countryNameKo":"아루바"},{"countryCode":"AM","phoneCode":"374","countryName":"Armenia","countryNameKo":"아르메니아"},{"countryCode":"AR","phoneCode":"54","countryName":"Argentina","countryNameKo":"아르헨티나"},{"countryCode":"AS","phoneCode":"1684","countryName":"American Samoa","countryNameKo":"아메리칸사모아"},{"countryCode":"IS","phoneCode":"354","countryName":"Iceland","countryNameKo":"아이슬란드"},{"countryCode":"HT","phoneCode":"509","countryName":"Haiti","countryNameKo":"아이티"},{"countryCode":"IE","phoneCode":"353","countryName":"Ireland","countryNameKo":"아일랜드"},{"countryCode":"AZ","phoneCode":"994","countryName":"Azerbaijan","countryNameKo":"아제르바이잔"},{"countryCode":"AF","phoneCode":"93","countryName":"Afghanistan","countryNameKo":"아프가니스탄"},{"countryCode":"AD","phoneCode":"376","countryName":"Andorra","countryNameKo":"안도라"},{"countryCode":"AL","phoneCode":"355","countryName":"Albania","countryNameKo":"알바니아"},{"countryCode":"DZ","phoneCode":"213","countryName":"Algeria","countryNameKo":"알제리"},{"countryCode":"AO","phoneCode":"244","countryName":"Angola","countryNameKo":"앙골라"},{"countryCode":"AG","phoneCode":"1268","countryName":"Antigua and Barbuda","countryNameKo":"앤티가 바부다"},{"countryCode":"AI","phoneCode":"1264","countryName":"Anguilla","countryNameKo":"앵귈라"},{"countryCode":"ER","phoneCode":"291","countryName":"Eritrea","countryNameKo":"에리트레아"},{"countryCode":"EE","phoneCode":"372","countryName":"Estonia","countryNameKo":"에스토니아"},{"countryCode":"EC","phoneCode":"593","countryName":"Ecuador","countryNameKo":"에콰도르"},{"countryCode":"ET","phoneCode":"251","countryName":"Ethiopia","countryNameKo":"에티오피아"},{"countryCode":"SV","phoneCode":"503","countryName":"El Salvador","countryNameKo":"엘살바도르"},{"countryCode":"GB","phoneCode":"44","countryName":"United Kingdom","countryNameKo":"영국"},{"countryCode":"VG","phoneCode":"1284","countryName":"Virgin Islands, British","countryNameKo":"영국령 버진아일랜드"},{"countryCode":"AC","phoneCode":"247","countryName":"Ascension Island","countryNameKo":"영국령 어센션"},{"countryCode":"IO","phoneCode":"246","countryName":"British Indian Ocean Territory","countryNameKo":"영국령 인도양 지역"},{"countryCode":"YE","phoneCode":"967","countryName":"Yemen","countryNameKo":"예멘"},{"countryCode":"OM","phoneCode":"968","countryName":"Oman","countryNameKo":"오만"},{"countryCode":"AT","phoneCode":"43","countryName":"Austria","countryNameKo":"오스트리아"},{"countryCode":"HN","phoneCode":"504","countryName":"Honduras","countryNameKo":"온두라스"},{"countryCode":"WF","phoneCode":"681","countryName":"Wallis and Futuna","countryNameKo":"왈리스 퓌튀나"},{"countryCode":"JO","phoneCode":"962","countryName":"Jordan","countryNameKo":"요르단"},{"countryCode":"UG","phoneCode":"256","countryName":"Uganda","countryNameKo":"우간다"},{"countryCode":"UY","phoneCode":"598","countryName":"Uruguay","countryNameKo":"우루과이"},{"countryCode":"UZ","phoneCode":"998","countryName":"Uzbekistan","countryNameKo":"우즈베키스탄"},{"countryCode":"UA","phoneCode":"380","countryName":"Ukraine","countryNameKo":"우크라이나"},{"countryCode":"IQ","phoneCode":"964","countryName":"Iraq","countryNameKo":"이라크"},{"countryCode":"IR","phoneCode":"98","countryName":"Iran, Islamic Republic of","countryNameKo":"이란"},{"countryCode":"IL","phoneCode":"972","countryName":"Israel","countryNameKo":"이스라엘"},{"countryCode":"EG","phoneCode":"20","countryName":"Egypt","countryNameKo":"이집트"},{"countryCode":"IT","phoneCode":"39","countryName":"Italy","countryNameKo":"이탈리아"},{"countryCode":"IN","phoneCode":"91","countryName":"India","countryNameKo":"인도"},{"countryCode":"JM","phoneCode":"1876","countryName":"Jamaica","countryNameKo":"자메이카"},{"countryCode":"ZM","phoneCode":"260","countryName":"Zambia","countryNameKo":"잠비아"},{"countryCode":"GQ","phoneCode":"240","countryName":"Equatorial Guinea","countryNameKo":"적도 기니"},{"countryCode":"GE","phoneCode":"995","countryName":"Georgia","countryNameKo":"조지아"},{"countryCode":"CF","phoneCode":"236","countryName":"Central African Republic","countryNameKo":"중앙아프리카 공화국"},{"countryCode":"DJ","phoneCode":"253","countryName":"Djibouti","countryNameKo":"지부티"},{"countryCode":"GI","phoneCode":"350","countryName":"Gibraltar","countryNameKo":"지브롤터"},{"countryCode":"ZW","phoneCode":"263","countryName":"Zimbabwe","countryNameKo":"짐바브웨"},{"countryCode":"TD","phoneCode":"235","countryName":"Chad","countryNameKo":"차드"},{"countryCode":"CZ","phoneCode":"420","countryName":"Czech Republic","countryNameKo":"체코"},{"countryCode":"CS","phoneCode":"42","countryName":"Czechoslovakia","countryNameKo":"체코슬로바키아"},{"countryCode":"CL","phoneCode":"56","countryName":"Chile","countryNameKo":"칠레"},{"countryCode":"CM","phoneCode":"237","countryName":"Cameroon","countryNameKo":"카메룬"},{"countryCode":"CV","phoneCode":"238","countryName":"Cape Verde","countryNameKo":"카보베르데"},{"countryCode":"QA","phoneCode":"974","countryName":"Qatar","countryNameKo":"카타르"},{"countryCode":"KH","phoneCode":"855","countryName":"Cambodia","countryNameKo":"캄보디아"},{"countryCode":"KE","phoneCode":"254","countryName":"Kenya","countryNameKo":"케냐"},{"countryCode":"KY","phoneCode":"1345","countryName":"Cayman Islands","countryNameKo":"케이맨 제도"},{"countryCode":"CR","phoneCode":"506","countryName":"Costa Rica","countryNameKo":"코스타리카"},{"countryCode":"CI","phoneCode":"225","countryName":"Cote D\u0027Ivoire","countryNameKo":"코트디부아르"},{"countryCode":"CO","phoneCode":"57","countryName":"Colombia","countryNameKo":"콜롬비아"},{"countryCode":"CG","phoneCode":"242","countryName":"Congo","countryNameKo":"콩고 공화국"},{"countryCode":"CD","phoneCode":"243","countryName":"Congo, The Democratic Republic of the","countryNameKo":"콩고 민주 공화국"},{"countryCode":"CU","phoneCode":"53","countryName":"Cuba","countryNameKo":"쿠바"},{"countryCode":"KW","phoneCode":"965","countryName":"Kuwait","countryNameKo":"쿠웨이트"},{"countryCode":"CK","phoneCode":"682","countryName":"Cook Islands","countryNameKo":"쿡 제도"},{"countryCode":"HR","phoneCode":"385","countryName":"Croatia","countryNameKo":"크로아티아"},{"countryCode":"KG","phoneCode":"996","countryName":"Kyrgyzstan","countryNameKo":"키르기스스탄"},{"countryCode":"KI","phoneCode":"686","countryName":"Kiribati","countryNameKo":"키리바시"},{"countryCode":"CY","phoneCode":"357","countryName":"Cyprus","countryNameKo":"키프로스"},{"countryCode":"TJ","phoneCode":"992","countryName":"Tajikistan","countryNameKo":"타지키스탄"},{"countryCode":"TZ","phoneCode":"255","countryName":"Tanzania, United Republic of","countryNameKo":"탄자니아"},{"countryCode":"TC","phoneCode":"1649","countryName":"Turks and Caicos Islands","countryNameKo":"터크스 케이커스 제도"},{"countryCode":"TR","phoneCode":"90","countryName":"Turkey","countryNameKo":"터키"},{"countryCode":"TG","phoneCode":"228","countryName":"Togo","countryNameKo":"토고"},{"countryCode":"TK","phoneCode":"690","countryName":"Tokelau","countryNameKo":"토켈라우"},{"countryCode":"TO","phoneCode":"676","countryName":"Tonga","countryNameKo":"통가"},{"countryCode":"TM","phoneCode":"993","countryName":"Turkmenistan","countryNameKo":"투르크메니스탄"},{"countryCode":"TN","phoneCode":"216","countryName":"Tunisia","countryNameKo":"튀니지"},{"countryCode":"TT","phoneCode":"1868","countryName":"Trinidad and Tobago","countryNameKo":"트리니다드 토바고"},{"countryCode":"PA","phoneCode":"507","countryName":"Panama","countryNameKo":"파나마"},{"countryCode":"PY","phoneCode":"595","countryName":"Paraguay","countryNameKo":"파라과이"},{"countryCode":"PK","phoneCode":"92","countryName":"Pakistan","countryNameKo":"파키스탄"},{"countryCode":"PG","phoneCode":"675","countryName":"Papua New Guinea","countryNameKo":"파푸아 뉴기니"},{"countryCode":"PW","phoneCode":"680","countryName":"Palau","countryNameKo":"팔라우"},{"countryCode":"PS","phoneCode":"970","countryName":"Palestinian Territory, Occupied","countryNameKo":"팔레스타인"},{"countryCode":"FO","phoneCode":"298","countryName":"Faroe Islands","countryNameKo":"페로 제도"},{"countryCode":"PE","phoneCode":"51","countryName":"Peru","countryNameKo":"페루"},{"countryCode":"PT","phoneCode":"351","countryName":"Portugal","countryNameKo":"포르투갈"},{"countryCode":"FK","phoneCode":"500","countryName":"Falkland Islands (Malvinas)","countryNameKo":"포클랜드 제도"},{"countryCode":"PL","phoneCode":"48","countryName":"Poland","countryNameKo":"폴란드"},{"countryCode":"PR","phoneCode":"1939","countryName":"Puerto Rico","countryNameKo":"푸에르토리코"},{"countryCode":"PR","phoneCode":"1787","countryName":"Puerto Rico","countryNameKo":"푸에르토리코"},{"countryCode":"FR","phoneCode":"33","countryName":"France","countryNameKo":"프랑스"},{"countryCode":"GF","phoneCode":"594","countryName":"French Guiana","countryNameKo":"프랑스령 기아나"},{"countryCode":"PF","phoneCode":"689","countryName":"French Polynesia","countryNameKo":"프랑스령 폴리네시아"},{"countryCode":"FJ","phoneCode":"679","countryName":"Fiji","countryNameKo":"피지"},{"countryCode":"FI","phoneCode":"358","countryName":"Finland","countryNameKo":"핀란드"},{"countryCode":"HU","phoneCode":"36","countryName":"Hungary","countryNameKo":"헝가리"},{"countryCode":"HK","phoneCode":"852","countryName":"Hong Kong","countryNameKo":"홍콩"}];
-        connLocation = ("KR" != "") ? "KR" : "KR";
-
-        $("#inpNationInfo").autocomplete({
-            minLength: 0,
-            source: $.map(data, function (item) {
-                return {
-                    label: item.countryNameKo + " / " + item.countryName,
-                    value: item.phoneCode,
-                    code: item.countryCode
-                }
-            }),
-            response: function (event, ui) {
-                $(".list_nationinfo").empty();
-                if (ui.content.length > 0) {
-                    $(".list_nationinfo").append('<ul id="list_nation" class="list_nation"></div');
-                } else {
-                    $(".list_nationinfo").html('<div class="wrap_nodata"><strong class="tit_nodata">검색 결과가 없습니다.</strong><p class="txt_nodata">검색할 국가명(영문,국문) 또는 국가번호를<br>다시 입력해 주세요.</p></div>');
-                }
-            },
-            open: function (event, ui) {
-                $(".ui-autocomplete").hide();
-            }
-
-        }).data('uiAutocomplete')._renderItem = function (ul, item) {
-            var label = item.label;
-            if (this.term != "") {
-                var re = new RegExp("(" + this.term + ")", "gi"),
-                        cls = "txt_emph",
-                        template = "<span class='" + cls + "'>$1</span>",
-                        label = item.label.replace(re, template);
-            }
-            var element= '<a href="javascript:;"  class="item_info"><span class="num_item">(+' + item.value + ')</span>' + label + '</a>';
+_gaq.push(['_setAccount', 'UA-18774526-1']);
+_gaq.push(['_setDomainName', 'wemakeprice.com']);
+_gaq.push(['_addIgnoredRef', 'wemakeprice.com']);
+_gaq.push(['_addIgnoredRef', 'wemakeprice.co.kr']);
+_gaq.push(['_setCampaignCookieTimeout', 0]);
 
 
 
-            return $('<li id="' + item.value + '"></li>')
-                    .append( element)
-                    .appendTo(".list_nationinfo")
-                    .on("click", function () {
-                        $(".link_nationnum").html('+' + item.value);
-                        countryNo.val(item.value);
-                        countryCode.val(item.code);
-                        showObject.removeClass("input_on");
+_gaq.push(['_trackPageview']);
+//_gaq.push(['_trackPageLoadTime']);
 
-                    }).keyup(function (e) {
-                        if (e.keyCode == 13) {
-                            $(".link_nationnum").html('+' + item.value);
-                            countryNo.val(item.value);
-                            countryCode.val(item.code);
-                            showObject.removeClass("input_on");
-                        }
-                    });
-        };
 
-        $("#inpNationInfo")
-                .autocomplete("search")
-                .on("keydown", function(e) {
-                    if (e.keyCode == 13) {
-                        return false;
-                    }
-                });
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 
-        $(".link_nationnum").on("click", function () {
-            showObject.toggleClass("input_on");
-        });
+$(document).ready(function() {
+	ga_tracking('#login_banner li');	// 로그인배너
+});
 
-        $(document).on("keyup mouseup", function (e) {
-            if (($('.wrap_nationinfo').has($(e.target)).length == 0) && (e.target.className != 'link_nationnum')) {
-                if (showObject.hasClass("input_on")) {
-                    showObject.removeClass("input_on");
-                }
-            }
-        });
+function ga_tracking(obj) {
+	$(obj).each(function(){
+		load_url = $(this).find("img").attr("load_url");
+		load_position = $(this).find("img").attr("load_position");
 
-    });
-    var showObject;
-    var countryNo;
-    var countryCode;
-
-    var initAutoComplete = function (showObj, countryNoObj, countryCodeObj) {
-        this.showObject = showObj;
-        this.countryNo = countryNoObj;
-        this.countryCode = countryCodeObj;
-        initConnLocation();
-    }
-
-    var initConnLocation = function() {
-        $.each(data, function(index, item) {
-            if(item.countryCode == connLocation) {
-                $('.link_nationinfo').html("(+" + item.phoneCode + ") " + item.countryNameKo + " / " + item.countryName)
-                        .on("click", function () {
-                            $(".link_nationnum").html('+' + item.phoneCode);
-                            countryNo.val(item.phoneCode);
-                            countryCode.val(item.countryCode);
-                            showObject.removeClass("input_on");
-
-                        }).keyup(function (e) {
-                    if (e.keyCode == 13) {
-                        $(".link_nationnum").html('+' + item.phoneCode);
-                        countryNo.val(item.phoneCode);
-                        countryCode.val(item.countryCode);
-                        showObject.removeClass("input_on");
-                    }
-                });
-
-                $('.link_nationinfo').html("(+" + item.phoneCode + ") " + item.countryNameKo + " / " + item.countryName)
-                $(".link_nationnum").html('+' + item.phoneCode);
-                countryNo.val(item.phoneCode);
-                countryCode.val(item.countryCode);
-            }
-        });
-    }
-
-    var setConnLocation = function(searchCountryNo) {
-        if(searchCountryNo == "") {
-            return;
-        }
-
-        $.each(data, function(index, item) {
-            if (item.phoneCode == searchCountryNo) {
-                $(".link_nationnum").html('+' + item.phoneCode);
-                countryNo.val(item.phoneCode);
-                countryCode.val(item.countryCode);
-            }
-        });
-    }
+		var rst0 = Math.floor(Math.random() * 100) + 1;		// 구글 트래킹 호출 관련 확률 적용
+		if (rst0 == 1) {
+			if($(this).css('display') != 'none') {
+				_gaq.push(['_trackEvent', 'Banner Impr', load_position, load_url]);
+			}
+		}
+	});
+}
 
 </script>
+
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5BBPNN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5BBPNN');</script>
+<!-- End Google Tag Manager -->	
+				<!-- // Footer -->
+</div>
 <script type="text/javascript">
-    $(document).ready(function () {
-        var isPassPW = false;
-        var nationalClick = false;
-
-        $("form").initValidation({
-            inputEvent: "keydown focus",
-            validationEvent: "blur",
-            daumId: {
-                rules: {
-                    required: true,
-                    rangelength: [3, 15],
-                    onlydigits: true,
-                    notUpperCase: true,
-                    daumidinvalid: true,
-                    checkjuminnoformat: true,
-                    uniqueDaumid: {pageId: "c126"}
-                },
-                inputListener: function (input) {
-                    formInput(input);
-                    hideRecommendIds();
-                },
-                errorListener: function (input, result) {
-                    var extra = result.extra;
-                    if (extra !== undefined) {
-                        var uniqueDaumidExtra = extra.uniqueDaumid;
-                        if (uniqueDaumidExtra !== undefined) {
-                            if(uniqueDaumidExtra.recommendId1 !== undefined && uniqueDaumidExtra.recommendId2 !== undefined) {
-                                showRecommendIds(uniqueDaumidExtra.recommendId1, uniqueDaumidExtra.recommendId2);
-                            } else if(uniqueDaumidExtra.responseCode == "403") {
-                                redirectFirstPageForError(result.message);
-                                return;
-                            }
-                        }
-                    }
-
-                    formError(input, result);
-                }
-            },
-            name: {
-                rules: {
-                    required: true,
-                    strTrim: true,
-                    nameinvalid: true,
-                    minKoreanNameLength: true,
-                    maxKoreanNameLength: true,
-                    englishnamelength: true
-                }
-            },
-            email: {
-                nullable: true,
-                rules: {
-                    strTrim: true,
-                    notUpperCase: true,
-                    email: true,
-                    activeEmail: {pageId: "c126"}
-                },
-                errorListener: function (input, result) {
-                    if(result.extra !== undefined) {
-                        var activeEmailCheckError = result.extra['activeEmail'];
-                        if (activeEmailCheckError != undefined && activeEmailCheckError.responseCode == "403") {
-                            redirectFirstPageForError(result.message);
-                            return;
-                        }
-                    }
-
-                    if ($.trim(input.val()) == "") {
-                        $(input).val("");
-                        formReset(input);
-                    } else {
-                        formError(input, result);
-                    }
-                }
-            },
-            password1: {
-                inputEvent: "focus",
-                validationEvent: "blur keyup",
-                rules: {
-                    pwValid: function(){ return {daumId : "#daumId"}}
-                },
-                errorListener: function (input, result) {
-                    if (GlobalValidationInfo.currEventType == "keyup" && input.val() == "") {
-                        return true;
-                    }
-                    isPassPW = false;
-                    setInputError(input, result.message);
-                    showValidIcon(input).text("불가");
-                    checkPwReconfirm(input, $("#password2"));
-                },
-                inputListener: function (input) {
-                    if(isPassPW) {
-                        showTypingBox(input);
-                        hideErrorMessage($("#password2"));
-                    }
-                },
-                successListener: function (input, result) {
-                    isPassPW = true;
-                    setInputSuccess(input);
-                    if (result !== undefined && result['pwValid'].extra !== undefined && result['pwValid'].extra.isStrong === true) {
-                        showValidIcon(input).addClass("txt_strong").text("강력");
-                    } else {
-                        showValidIcon(input).removeClass("txt_strong").text("안전");
-                    }
-                    checkPwReconfirm(input, $("#password2"));
-                }
-            },
-            password2: {
-                inputEvent: "focus",
-                resultCaching: false,
-                rules: {
-                    isSameValue: $("#password1")
-                },
-                errorListener: function (input, result) {
-                    if (isPassPW) {
-                        passwordNotMatched(input);
-                    } else {
-                        hideTypingBox(input);
-                    }
-                },
-                successListener: function (input) {
-                    if (isPassPW) {
-                        passwordMatched(input);
-                    } else {
-                        hideTypingBox(input);
-                    }
-                },
-                inputListener: function (input) {
-                    if (isPassPW) {
-                        setInputFocus(input);
-                        hideValidIcon(input);
-                    }
-                }
-            },
-            errorListener: formError,
-            resetListener: formReset,
-            inputListener: formInput,
-            successListener: formSuccess
-        });
-
-            function formError(input, result) {
-            setInputError(input, result.message);
-            hideValidIcon(input);
-        }
-
-        function formReset(input) {
-            setInputReset(input);
-            hideValidIcon(input);
-        }
-
-        function formInput(input) {
-            setInputFocus(input);
-            hideValidIcon(input);
-        }
-
-        function formSuccess(input) {
-            setInputSuccess(input);
-            showValidIcon(input);
-        }
-
-        function setInputError(input, message) {
-            showErrorBox(input);
-            showErrorMessage(getProperErrorMessageTarget(input), message);
-        }
-
-        function setInputReset(input) {
-            resetBox(input);
-        }
-
-        function setInputSuccess(input) {
-            if (GlobalValidationInfo.currEventType == "keyup") {
-                showTypingBox(input);
-            } else {
-                showSuccessBox(input);
-            }
-            hideErrorMessage(getProperErrorMessageTarget(input));
-        }
-
-        function setInputFocus(input) {
-            showTypingBox(input);
-            hideErrorMessage(getProperErrorMessageTarget(input));
-        }
-
-        function showValidIcon(input) {
-            var target = $(input).siblings(".mark_valid");
-            if (target.length > 0) {
-                target.show();
-            }
-            return target;
-        }
-
-        function hideValidIcon(input) {
-            var target = $(input).siblings(".mark_valid");
-            if (target.length > 0) {
-                target.hide();
-            }
-            return target;
-        }
-
-        function setInputErrorCert(input, message) {
-            showErrorBox(input);
-            showErrorMessage(getProperErrorMessageTarget(input), message);
-        }
-
-        $("form input:text, form input:password").focus(function () {
-            offPlaceHolder(this);
-        }).blur(function () {
-            onPlaceHolder(this);
-        }).on("keyup keypress", function (e) {
-            return e.which !== 13;
-        });
-
-        function offPlaceHolder(input) {
-            $(input).siblings(".txt_placeholder").addClass("screen_out");
-        }
-
-        function onPlaceHolder(input) {
-            if ($(input).val() == "") {
-                $(input).siblings(".txt_placeholder").removeClass("screen_out");
-            }
-        }
-
-        $("form").submit(function () {
-            var errorCnt = 0;
-
-            if (!$("form").valid()) {
-                errorCnt++;
-            }
-            if (isAuthenticated != true && $("#inpPhone").isValid() == true) {
-                if (!isSendCode) {
-                    sendCertCodeFail($.fn.messages.sendAndInputCertCode);
-                } else {
-                    confirmCertCodeFail($.fn.messages.inputAndConfirmCertCode);
-                }
-                errorCnt++;
-            }
-            if (errorCnt == 0) {
-                $("#submitBtn").attr("disabled", true);
-                return true;
-            }
-            return false;
-        });
-
-        $("form").keydown(function (event) {
-            var activeElement = document.activeElement;
-            if (event.keyCode === 13 && (activeElement.nodeName == 'INPUT' || $(activeElement).attr('type') == 'submit')) {
-                $(activeElement).blur();
-                $("form").submit();
-            }
-        });
-
-            function showRecommendIds(recommendId1, recommendId2) {
-            $("#recommendId1").children(".txt_other").html(recommendId1);
-            $("#recommendId2").children(".txt_other").html(recommendId2);
-            $("#recommendIds").show();
-        }
-
-        function hideRecommendIds() {
-            $("#recommendIds").hide();
-        }
-
-        var changeToRecommendId = function () {
-            hideRecommendIds()
-            $("#daumId").val($(this).children(".txt_other").text())
-            $("#daumId").blur();
-            $("#password1").focus();
-        };
-
-        $("#recommendId1").click(changeToRecommendId);
-        $("#recommendId2").click(changeToRecommendId);
-
-
-    
-        function checkPwReconfirm(pw1, pw2) {
-            if (pw2.val() == "" || !isPassPW) {
-                setInputReset(pw2);
-                hideValidIcon(pw2);
-            } else {
-                if (pw1.val() == pw2.val()) {
-                    passwordMatched(pw2);
-                } else {
-                    passwordNotMatched(pw2);
-                }
-            }
-        }
-
-        function passwordMatched(input) {
-            setInputSuccess(input);
-            showValidIcon(input).text("일치");
-        }
-
-        function passwordNotMatched(input) {
-            setInputError(input, $.fn.messages.passwordNotMatched);
-            showValidIcon(input).text("불일치");
-        }
-
-    
-        var isSendCode = false;
-        var isAuthenticated = false;
-
-            $("#inpPhone").initValidation({
-            inputEvent: "focus",
-            validationEvent: "blur keyup",
-            rules: {
-                required: true,
-                mobile : function(){ return {mobileNationalCode: $("#mobileNationalCode").val(),mobileNational: $("#mobileNational").val(), mobileInternationalFormat: "#mobileInternationalFormat"}}
-            },
-            errorListener: function (input, result) {
-
-                if(nationalClick == true && $(input).val() == ""){
-                    return true;
-                }
-
-                setCertCodeBtnDisable("certBtn", true);
-                if (GlobalValidationInfo.currEventType != "keyup") {
-                    if(result.extra !== undefined) {
-                        var certcodePolicyCheckError = result.extra['certcodePolicy'];
-                        if (certcodePolicyCheckError != undefined && certcodePolicyCheckError.responseCode == "403") {
-                            redirectFirstPageForError(result.message);
-                            return;
-                        }
-                    }
-
-                    setInputErrorCert(input, result.message);
-                }
-            },
-            inputListener: function (input, result) {
-                isAuthenticated = false;
-
-                showTypingBoxForAuth(input);
-
-                $("#inpCertCode").val("");
-                resetBox($("#inpCertCode"));
-                hideErrorMessage($("#inpCertCode"));
-                setCertCodeBtnDisable("confirmBtn", true);
-                onPlaceHolder($("#inpCertCode"));
-                $("#matchedCertCodeText").hide();
-
-                if (isSendCode) {
-                    $("#inpCertCode").attr("disabled", false);
-                }
-            },
-            successListener: function (input, result) {
-                if(isAuthenticated == false){
-                    setCertCodeBtnDisable("certBtn", false);
-                    if (GlobalValidationInfo.currEventType == "blur") {
-                        showSuccessBox(input);
-                    }
-                }
-            }
-        });
-
-            $("#numNation").on("mouseenter touchstart", function () {
-            nationalClick = true;
-        });
-
-        $("#numNation").on("mouseleave touchend", function () {
-            nationalClick = false;
-        });
-
-        $("#numNation").on("click touch", function () {
-            nationalClick = false;
-        });
-
-        // 국가 선택 후 #inpPhone으로 포커싱 -- 보완예정
-//        $("#numNation").on("focusout", function (event) {
-//            console.log("focusout");
-//            console.log("event :"+event.type);
-//            $(".num_nation").trigger("clickNumNation");
-//        });
-//
-//        $("#numNation").on("clickNumNation", function (event) {
-//            console.log("clickNumNation");
-//            console.log("event :"+event.type);
-//            setTimeout(function(){$("#inpPhone").focus();}, 100);
-//        });
-
-        $("#inpCertCode").initValidation({
-            inputEvent: "focus",
-            validationEvent: "blur keyup",
-            rules: {
-                required: true,
-                onlyNumber: true,
-                rangelength: [6,6]
-            },
-
-            errorListener: function (input, result) {
-                hideTypingBox(input);
-                if ($("#inpPhone").isValid() == true) {
-                    setCertCodeBtnDisable("confirmBtn", true);
-                    if (GlobalValidationInfo.currEventType != "keyup") {
-                        setInputErrorCert(input, result.message);
-                    }
-                }
-            },
-            inputListener: function (input, result) {
-                showTypingBoxForAuth(input);
-                if ($("#inpPhone").isValid() == true) {
-                    hideErrorMessage($("#inpCertCode"));
-                }
-            },
-            successListener: function (input, result) {
-                if (GlobalValidationInfo.currEventType == "blur") {
-                    hideTypingBox($("#inpCertCode"));
-                }
-                if($("#inpPhone").isValid()){
-                    setCertCodeBtnDisable("confirmBtn", false);
-                }
-            }
-        });
-
-        $("#certBtn").click(function () {
-
-            if ($("#certBtn").hasClass("disabled")){
-                return false;
-            }
-            hideTypingBox($("#inpCertCode"));
-
-            //인증번호 발송 정책체크
-            var NumberInfo = function(){return {pageId: "c126", eventType: GlobalValidationInfo.currEventType, isAuthenticated: isAuthenticated, serviceType: "join", mobileNationalCode :$("#mobileNationalCode").val(), mobileNational :$("#mobileNational").val()}};
-            var val = $.fn.methods.certcodePolicy( $("#inpPhone").val(),  "", NumberInfo );
-
-            if(val.result != 'success'){
-                $("#inpPhone").showElementError("inpPhone", val.message);
-                if(val.extra !== undefined) {
-                    if (val.extra.responseCode == "403") {
-                        redirectFirstPageForError(val.message);
-                    }
-                }
-                return false;
-            }
-
-
-            if (confirm( $("#mobileInternationalFormat").val() + " 입력하신 번호로 인증번호를 발송합니다.\n번호가 정확한지 확인해 주세요.")) {
-                            setInputReset($("#inpCertCode"));
-                setCertCodeBtnDisable("confirmBtn", true);
-                $("#inpCertCode").val("").attr("disabled", true);
-                $("#matchedCertCodeText").hide();
-                isAuthenticated = false;
-                isSendCode = false;
-
-                $.post("https://member.daum.net/api/auth/send.do?v=2", {
-                    PAGEID: "c126",
-                    serviceType: "join",
-                    authType: "phone",
-                    mobile: $("#inpPhone").val(),
-                    countryCode: $("#mobileNationalCode").val(),
-                    countryNo: $("#mobileNational").val()
-
-                }, function (data) {
-                    if (data.code == "200") {
-                        if (data.message == "OK") {
-                            sendCertCodeOK();
-                        } else {
-                            sendCertCodeFail(data.result.message);
-                        }
-                    } else if (data.code == "500") {
-                        sendCertCodeFail($.fn.messages.failSendCertCode);
-                    } else {
-                        sendCertCodeFail(data.result.message);
-                    }
-                });
-            }
-        });
-
-            $("#confirmBtn").click(function () {
-
-            if ($("#confirmBtn").hasClass("disabled")){
-                return false;
-            }
-
-            if( $("#inpCertCode").isValid() == false){
-                $("#inpCertCode").valid();
-                return false;
-            }
-
-            if ($("#inpPhone").isValid() == false) {
-                return false;
-            }
-
-            var extra = {};
-            $.post("https://member.daum.net/api/auth/collate.do?v=2", {
-                PAGEID: "c126",
-                serviceType: "join",
-                authType: "phone",
-                inputValue: $("#inpCertCode").val(),
-                mobile: $("#inpPhone").val(),
-                countryCode: $("#mobileNationalCode").val(),
-                countryNo: $("#mobileNational").val()
-
-            }, function (data) {
-                if (data.code == "200") {
-                    if (data.message == "MATCH") {
-                        confirmCertCodeOK();
-                    } else if (data.message == "NOT_MATCH") {
-                        confirmCertCodeFail(data.result.message, extra);
-                    } else if (data.message == "NOT_VALID") {
-                        sendCertCodeFail(data.result.message);
-                        $("#inpCertCode").val("");
-                    } else {
-                        confirmCertCodeFail(data.result.message, extra);
-                    }
-                } else if (data.code == '403') {
-                    result = 'fail';
-                    message = $.fn.messages.invalidAccess
-                    extra.responseCode = data.code;
-                    confirmCertCodeFail(message, extra);
-                } else if (data.code == "500") {
-                    confirmCertCodeFail($.fn.messages.failConfirmCertCode, extra);
-                } else {
-                    confirmCertCodeFail(data.message, extra);
-                }
-            });
-        });
-
-            function sendCertCodeOK() {
-            showSuccessBox($("#inpPhone"));
-            $("#certBtn").html("재발송");
-            $("#matchedCertCodeText").hide();
-
-            setInputSuccess($("#inpPhone"));
-            setInputReset($("#inpCertCode"));
-            $("#inpCertCode").val("").attr("disabled", false).focus();
-
-            setCertCodeBtnDisable("confirmBtn", true);
-            isAuthenticated = false;
-            isSendCode = true;
-        }
-
-        function sendCertCodeFail(message) {
-            setInputError($("#inpPhone"), message);
-            setCertCodeBtnDisable("confirmBtn", true);
-            showErrorBox($("#inpCertCode"));
-        }
-
-            function confirmCertCodeOK() {
-            setInputSuccess($("#inpCertCode"));
-
-            $("#inpPhone").attr("disabled", true);
-            setCertCodeBtnDisable("certBtn", true);
-
-            $("#inpCertCode").attr("disabled", true);
-
-            setCertCodeBtnDisable("confirmBtn", true);
-            $("#matchedCertCodeText").show();
-            $(".num_nation").css({ "pointer-events": "none" });
-            isAuthenticated = true;
-        }
-
-        function confirmCertCodeFail(message, extra) {
-            if(extra !== undefined && extra.responseCode == "403") {
-                redirectFirstPageForError(message);
-                return;
-            }
-
-            setInputError($("#inpCertCode"), message);
-            setCertCodeBtnDisable("confirmBtn", false);
-            $("#matchedCertCodeText").hide();
-
-            isAuthenticated = false;
-        }
-
-            function setCertCodeBtnDisable(objId, disabled) {
-            if (disabled) {
-                $("#" + objId).addClass("disabled");
-            } else {
-                $("#" + objId).removeClass("disabled");
-            }
-        }
-
-            function setAuthenticatedStatus(authValue, code) {
-            offPlaceHolder($("#inpPhone"));
-            offPlaceHolder($("#inpCertCode"));
-
-            $("#inpPhone").val(authValue);
-            sendCertCodeOK();
-            setCertCodeBtnDisable("certBtn", false);
-
-            $("#inpCertCode").val(code);
-            confirmCertCodeOK();
-        }
-
-
-            function showErrorBox(input) {
-            $(input).parent().addClass("info_error").removeClass("wrap_valid").removeClass("wrap_typing");
-        }
-
-        function showErrorMessage(input, message) {
-            if(message !== undefined && message != "") {
-                $(input).parent().siblings(".txt_message").html(message).show();
-            }
-        }
-
-        function hideErrorMessage(input) {
-            $(input).parent().siblings(".txt_message").hide();
-        }
-
-        function resetBox(input) {
-            $(input).parent().removeClass("info_error").removeClass("wrap_valid").removeClass("wrap_typing");
-        }
-
-        function hideTypingBox(input) {
-            $(input).parent().removeClass("info_error").removeClass("wrap_typing");
-        }
-
-        function showTypingBox(input) {
-            $(input).parent().removeClass("info_error").addClass("wrap_valid").addClass("wrap_typing");
-        }
-
-        function showTypingBoxForAuth(input) {
-            $(input).parent().removeClass("info_error").addClass("wrap_typing");
-        }
-
-        function showSuccessBox(input) {
-            $(input).parent().removeClass("info_error").addClass("wrap_valid").removeClass("wrap_typing");
-        }
-
-        function existErrorMessage(input) {
-            return $(input).parent().siblings(".txt_message").length > 0;
-        }
-
-        function getProperErrorMessageTarget(input) {
-            var target;
-            var id = $(input).attr("id");
-            if ("inpPhone" == id) {
-                target = $("#inpCertCode");
-            } else if ("password1" == id) {
-                target = $("#password2");
-            } else {
-                target = input;
-            }
-            return target;
-        }
-
-        $(".link_back").click(function() {
-            var prev = "https://member.daum.net/join/terms"
-            if("" != "") {
-                prev = prev +  "?rtnUrl=";
-            }
-            location.href = prev;
-        });
-
-        initAutoComplete($("#countryListContainer"), $("#mobileNational"), $("#mobileNationalCode"));
-                                });
-
-    function redirectFirstPageForError(message) {
-        alert(message);
-        location.href = "https://member.daum.net/join/terms";
-    }
+$(document).ready(function() {
+	$('.wrap_check_agree button').live('click',function() {
+		$("#xpopup2").html('');
+		xpopup_close();
+
+		$("#xpopup2").load('/customer_center/agreement_popup');
+		$('#xpopup2').dialog({width: 510, minHeight: 252, autoOpen: false, modal: true, resizable: false});
+		$('#xpopup2').dialog({
+			close: function () {
+				enable_scroll_y();
+			}
+		});
+		$('#xpopup2').dialog('open');
+		xpopup_open();
+	});
+});
 </script>
 </body>
 </html>
